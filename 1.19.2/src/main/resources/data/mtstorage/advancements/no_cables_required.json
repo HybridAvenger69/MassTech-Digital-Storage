@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:network_transmitter"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.no_cables_required"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.no_cables_required.description"
+    }
+  },
+  "parent": "mtstorage:wireless",
+  "criteria": {
+    "network_transmitter_receiver_card_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:network_transmitter"
+            ]
+          },
+          {
+            "items": [
+              "mtstorage:network_receiver"
+            ]
+          },
+          {
+            "items": [
+              "mtstorage:network_card"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

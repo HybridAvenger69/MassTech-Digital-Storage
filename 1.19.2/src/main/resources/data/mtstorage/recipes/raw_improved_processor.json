@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mtstorage:processor_binding"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "tag": "forge:silicon"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:raw_improved_processor"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PEP",
+    "SRS",
+    "PSP"
+  ],
+  "key": {
+    "P": {
+      "item": "mtstorage:improved_processor"
+    },
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "S": {
+      "item": "mtstorage:256k_fluid_storage_part"
+    },
+    "R": {
+      "item": "minecraft:bucket"
+    }
+  },
+  "result": {
+    "item": "mtstorage:1024k_fluid_storage_part"
+  }
+}

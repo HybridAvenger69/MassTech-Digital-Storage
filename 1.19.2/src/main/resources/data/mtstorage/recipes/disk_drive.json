@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ECE",
+    "EME",
+    "EPE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "C": {
+      "tag": "forge:chests"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    },
+    "P": {
+      "item": "mtstorage:advanced_processor"
+    }
+  },
+  "result": {
+    "item": "mtstorage:disk_drive"
+  }
+}

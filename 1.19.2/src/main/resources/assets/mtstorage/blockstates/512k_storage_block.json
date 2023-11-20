@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mtstorage:block/512k_storage_block"
+    }
+  }
+}

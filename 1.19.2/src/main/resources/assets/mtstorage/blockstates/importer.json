@@ -1,0 +1,115 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mtstorage:block/cable_core"
+      }
+    },
+    {
+      "when": {
+        "north": true
+      },
+      "apply": {
+        "model": "mtstorage:block/cable_extension"
+      }
+    },
+    {
+      "when": {
+        "east": true
+      },
+      "apply": {
+        "model": "mtstorage:block/cable_extension",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "south": true
+      },
+      "apply": {
+        "model": "mtstorage:block/cable_extension",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "west": true
+      },
+      "apply": {
+        "model": "mtstorage:block/cable_extension",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "up": true
+      },
+      "apply": {
+        "model": "mtstorage:block/cable_extension",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "down": true
+      },
+      "apply": {
+        "model": "mtstorage:block/cable_extension",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "direction": "north"
+      },
+      "apply": {
+        "model": "mtstorage:block/importer"
+      }
+    },
+    {
+      "when": {
+        "direction": "east"
+      },
+      "apply": {
+        "model": "mtstorage:block/importer",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "direction": "south"
+      },
+      "apply": {
+        "model": "mtstorage:block/importer",
+        "x": 180
+      }
+    },
+    {
+      "when": {
+        "direction": "west"
+      },
+      "apply": {
+        "model": "mtstorage:block/importer",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "direction": "up"
+      },
+      "apply": {
+        "model": "mtstorage:block/importer",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "direction": "down"
+      },
+      "apply": {
+        "model": "mtstorage:block/importer",
+        "x": 90
+      }
+    }
+  ]
+}

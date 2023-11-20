@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "connected=true": {
+      "model": "mtstorage:block/fluid_interface_connected"
+    },
+    "connected=false": {
+      "model": "mtstorage:block/fluid_interface_disconnected"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "loader": "mtstorage:disk_manipulator",
+  "render_type": "minecraft:cutout"
+}

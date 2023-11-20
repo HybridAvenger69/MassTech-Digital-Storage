@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mtstorage:quartz_enriched_tech_block"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:quartz_enriched_tech",
+    "count": 9
+  }
+}

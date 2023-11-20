@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "energy_type=off": {
+      "model": "mtstorage:block/controller/off"
+    },
+    "energy_type=nearly_off": {
+      "model": "mtstorage:block/controller/nearly_off"
+    },
+    "energy_type=nearly_on": {
+      "model": "mtstorage:block/controller/nearly_on"
+    },
+    "energy_type=on": {
+      "model": "mtstorage:block/controller/yellow"
+    }
+  }
+}

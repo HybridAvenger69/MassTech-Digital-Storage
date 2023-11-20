@@ -1,0 +1,18 @@
+{
+  "parent": "mtstorage:block/cube_cutout",
+  "textures": {
+    "particle": "mtstorage:block/security_manager/front",
+    "east": "mtstorage:block/security_manager/right",
+    "south": "mtstorage:block/security_manager/back",
+    "west": "mtstorage:block/security_manager/left",
+    "up": "mtstorage:block/security_manager/top",
+    "down": "mtstorage:block/bottom",
+    "north": "mtstorage:block/security_manager/front",
+    "cutout_down": "mtstorage:block/bottom",
+    "cutout_east": "mtstorage:block/security_manager/cutouts/right_black",
+    "cutout_west": "mtstorage:block/security_manager/cutouts/left_black",
+    "cutout_south": "mtstorage:block/security_manager/cutouts/back_black",
+    "cutout_north": "mtstorage:block/security_manager/cutouts/front_black",
+    "cutout_up": "mtstorage:block/security_manager/cutouts/top_black"
+  }
+}

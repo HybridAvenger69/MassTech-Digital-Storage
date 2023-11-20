@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PCG",
+    "EMG",
+    "PDG"
+  ],
+  "key": {
+    "P": {
+      "item": "mtstorage:improved_processor"
+    },
+    "C": {
+      "item": "mtstorage:construction_core"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    },
+    "D": {
+      "item": "mtstorage:destruction_core"
+    }
+  },
+  "result": {
+    "item": "mtstorage:grid"
+  }
+}

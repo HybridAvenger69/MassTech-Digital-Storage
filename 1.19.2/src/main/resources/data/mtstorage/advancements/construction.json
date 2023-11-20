@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:constructor"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.construction"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.construction.description"
+    }
+  },
+  "parent": "mtstorage:exporting",
+  "criteria": {
+    "constructor_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:constructor"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

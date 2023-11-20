@@ -1,0 +1,56 @@
+{
+  "variants": {
+    "connected=false,direction=down": {
+      "model": "mtstorage:block/wireless_transmitter/disconnected"
+    },
+    "connected=true,direction=down": {
+      "model": "mtstorage:block/wireless_transmitter/cyan"
+    },
+    "connected=false,direction=up": {
+      "model": "mtstorage:block/wireless_transmitter/disconnected",
+      "x": 180
+    },
+    "connected=true,direction=up": {
+      "model": "mtstorage:block/wireless_transmitter/cyan",
+      "x": 180
+    },
+    "connected=false,direction=north": {
+      "model": "mtstorage:block/wireless_transmitter/disconnected",
+      "x": 90,
+      "y": 180
+    },
+    "connected=true,direction=north": {
+      "model": "mtstorage:block/wireless_transmitter/cyan",
+      "x": 90,
+      "y": 180
+    },
+    "connected=false,direction=south": {
+      "model": "mtstorage:block/wireless_transmitter/disconnected",
+      "x": 90
+    },
+    "connected=true,direction=south": {
+      "model": "mtstorage:block/wireless_transmitter/cyan",
+      "x": 90
+    },
+    "connected=false,direction=west": {
+      "model": "mtstorage:block/wireless_transmitter/disconnected",
+      "x": 90,
+      "y": 90
+    },
+    "connected=true,direction=west": {
+      "model": "mtstorage:block/wireless_transmitter/cyan",
+      "x": 90,
+      "y": 90
+    },
+    "connected=false,direction=east": {
+      "model": "mtstorage:block/wireless_transmitter/disconnected",
+      "x": 90,
+      "y": 270
+    },
+    "connected=true,direction=east": {
+      "model": "mtstorage:block/wireless_transmitter/cyan",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

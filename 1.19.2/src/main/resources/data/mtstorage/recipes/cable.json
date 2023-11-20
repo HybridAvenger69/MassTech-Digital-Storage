@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EEE",
+    "GRG",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "mtstorage:cable",
+    "count": 12
+  }
+}

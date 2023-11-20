@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:external_storage"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.storing_externally"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.storing_externally.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "external_storage_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:external_storage"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

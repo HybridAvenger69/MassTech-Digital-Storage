@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:upgrade"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.upgrading"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.upgrading.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "upgrade_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:upgrade"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

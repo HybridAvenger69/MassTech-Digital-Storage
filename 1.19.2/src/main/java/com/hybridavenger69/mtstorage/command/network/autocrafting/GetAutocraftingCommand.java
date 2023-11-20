@@ -1,0 +1,37 @@
+package com.hybridavenger69.mtstorage.command.network.autocrafting;
+
+import com.mojang.brigadier.builder.ArgumentBuilder;
+import com.mojang.brigadier.context.CommandContext;
+import com.hybridavenger69.mtstorage.api.autocrafting.task.ICraftingTask;
+import com.hybridavenger69.mtstorage.api.network.INetwork;
+import com.hybridavenger69.mtstorage.command.network.NetworkCommand;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.UuidArgument;
+import net.minecraft.network.chat.Component;
+
+
+import java.util.UUID;
+
+public class GetAutocraftingCommand extends NetworkCommand {
+    public static ArgumentBuilder<CommandSourceStack, ?> register() {
+        return Commands.literal("get").then(
+            Commands.argument("id", UuidArgument.uuid()).suggests(new AutocraftingIdSuggestionProvider())
+                .executes(new GetAutocraftingCommand())
+        );
+    }
+
+    @Override
+    protected int run(CommandContext<CommandSourceStack> context, INetwork network) {
+        UUID id = UuidArgument.getUuid(context, "id");
+
+        ICraftingTask task = network.getCraftingManager().getTask(id);
+        if (task == null) {
+            context.getSource().sendFailure(Component.translatable("commands.mtstorage.network.autocrafting.get.error.not_found"));
+        } else {
+            ListAutocraftingCommand.addInfo(context, task);
+        }
+
+        return 0;
+    }
+}

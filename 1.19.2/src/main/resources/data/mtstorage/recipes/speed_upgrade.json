@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ESE",
+    "SUS",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "S": {
+      "item": "minecraft:sugar"
+    },
+    "U": {
+      "item": "mtstorage:upgrade"
+    }
+  },
+  "result": {
+    "item": "mtstorage:speed_upgrade"
+  }
+}

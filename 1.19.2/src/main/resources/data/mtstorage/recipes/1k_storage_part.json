@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SES",
+    "GRG",
+    "SGS"
+  ],
+  "key": {
+    "S": {
+      "tag": "forge:silicon"
+    },
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "mtstorage:1k_storage_part"
+  }
+}

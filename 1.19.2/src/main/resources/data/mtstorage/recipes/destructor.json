@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EDE",
+    "RMR",
+    "EIE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "D": {
+      "item": "mtstorage:destruction_core"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "M": {
+      "item": "mtstorage:cable"
+    },
+    "I": {
+      "item": "mtstorage:improved_processor"
+    }
+  },
+  "result": {
+    "item": "mtstorage:destructor"
+  }
+}

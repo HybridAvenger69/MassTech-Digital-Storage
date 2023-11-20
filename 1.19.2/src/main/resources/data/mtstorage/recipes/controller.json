@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EPE",
+    "SMS",
+    "ESE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "P": {
+      "item": "mtstorage:advanced_processor"
+    },
+    "S": {
+      "tag": "forge:silicon"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    }
+  },
+  "result": {
+    "item": "mtstorage:controller"
+  }
+}

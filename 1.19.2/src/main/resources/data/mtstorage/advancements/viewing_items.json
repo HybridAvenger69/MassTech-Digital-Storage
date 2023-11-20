@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:grid"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.viewing_items"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.viewing_items.description"
+    }
+  },
+  "parent": "mtstorage:storing_items",
+  "criteria": {
+    "grid_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:grid"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

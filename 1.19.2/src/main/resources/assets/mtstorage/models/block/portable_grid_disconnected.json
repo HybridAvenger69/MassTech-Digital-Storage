@@ -1,0 +1,6 @@
+{
+  "parent": "mtstorage:block/portable_grid_base",
+  "textures": {
+    "texture1": "mtstorage:block/portable_grid_2_disconnected"
+  }
+}

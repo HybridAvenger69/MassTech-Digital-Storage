@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:destructor"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.destruction"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.destruction.description"
+    }
+  },
+  "parent": "mtstorage:importing",
+  "criteria": {
+    "destructor_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:destructor"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

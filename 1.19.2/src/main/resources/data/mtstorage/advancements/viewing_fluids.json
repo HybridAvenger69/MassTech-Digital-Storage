@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:fluid_grid"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.viewing_fluids"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.viewing_fluids.description"
+    }
+  },
+  "parent": "mtstorage:storing_fluids",
+  "criteria": {
+    "fluid_grid_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:fluid_grid"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

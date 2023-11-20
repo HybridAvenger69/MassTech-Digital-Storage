@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ESE",
+    "CMD",
+    "ESE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "S": {
+      "item": "mtstorage:storage_housing"
+    },
+    "C": {
+      "item": "mtstorage:construction_core"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    },
+    "D": {
+      "item": "mtstorage:destruction_core"
+    }
+  },
+  "result": {
+    "item": "mtstorage:disk_manipulator"
+  }
+}

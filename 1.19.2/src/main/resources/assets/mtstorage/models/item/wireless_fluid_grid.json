@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mtstorage:item/wireless_fluid_grid_disconnected"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "connected": 0
+      },
+      "model": "mtstorage:item/wireless_fluid_grid_disconnected"
+    },
+    {
+      "predicate": {
+        "connected": 1
+      },
+      "model": "mtstorage:item/wireless_fluid_grid_connected"
+    }
+  ]
+}

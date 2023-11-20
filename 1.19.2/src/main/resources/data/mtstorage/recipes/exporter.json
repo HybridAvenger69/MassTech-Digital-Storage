@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mtstorage:cable"
+    },
+    {
+      "item": "mtstorage:construction_core"
+    },
+    {
+      "item": "mtstorage:improved_processor"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:exporter"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:64k_fluid_storage_disk"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.storing_fluids"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.storing_fluids.description"
+    }
+  },
+  "parent": "mtstorage:drives",
+  "criteria": {
+    "fluid_storage_disk_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:64k_fluid_storage_disk"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

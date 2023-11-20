@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EEE",
+    "CMD",
+    "ANA"
+  ],
+  "key": {
+    "E": {
+      "tag": "forge:ender_pearls"
+    },
+    "C": {
+      "item": "mtstorage:construction_core"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    },
+    "D": {
+      "item": "mtstorage:destruction_core"
+    },
+    "A": {
+      "item": "mtstorage:advanced_processor"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "mtstorage:network_transmitter"
+  }
+}

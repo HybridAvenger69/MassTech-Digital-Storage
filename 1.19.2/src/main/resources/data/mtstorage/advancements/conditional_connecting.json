@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:relay"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.conditional_connecting"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.conditional_connecting.description"
+    }
+  },
+  "parent": "mtstorage:connecting",
+  "criteria": {
+    "relay_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:relay"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

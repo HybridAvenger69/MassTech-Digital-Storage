@@ -1,0 +1,18 @@
+{
+  "parent": "mtstorage:block/cube_cutout",
+  "textures": {
+    "particle": "mtstorage:block/crafter/side",
+    "east": "mtstorage:block/crafter/side",
+    "south": "mtstorage:block/crafter/side",
+    "west": "mtstorage:block/crafter/side",
+    "up": "mtstorage:block/crafter/top",
+    "down": "mtstorage:block/bottom",
+    "north": "mtstorage:block/crafter/side",
+    "cutout_down": "mtstorage:block/bottom",
+    "cutout_east": "mtstorage:block/crafter/cutouts/side_cyan",
+    "cutout_west": "mtstorage:block/crafter/cutouts/side_cyan",
+    "cutout_south": "mtstorage:block/crafter/cutouts/side_cyan",
+    "cutout_north": "mtstorage:block/crafter/cutouts/side_cyan",
+    "cutout_up": "mtstorage:block/crafter/cutouts/top_cyan"
+  }
+}

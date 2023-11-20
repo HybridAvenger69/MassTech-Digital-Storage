@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:storage_monitor"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.better_than_a_barrel"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.better_than_a_barrel.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "storage_monitor_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:storage_monitor"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

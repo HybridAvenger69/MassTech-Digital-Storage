@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:crafting_monitor"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.monitoring"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.monitoring.description"
+    }
+  },
+  "parent": "mtstorage:autocrafting",
+  "criteria": {
+    "crafting_monitor_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:crafting_monitor"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PEP",
+    "SRS",
+    "PSP"
+  ],
+  "key": {
+    "P": {
+      "item": "mtstorage:basic_processor"
+    },
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "S": {
+      "item": "mtstorage:1k_storage_part"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "mtstorage:4k_storage_part"
+  }
+}

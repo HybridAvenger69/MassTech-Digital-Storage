@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "II",
+    "IQ"
+  ],
+  "key": {
+    "I": {
+      "item": "hybridlib:tech_ingot"
+    },
+    "Q": {
+      "item": "minecraft:quartz"
+    }
+  },
+  "result": {
+    "item": "mtstorage:quartz_enriched_tech",
+    "count": 4
+  }
+}

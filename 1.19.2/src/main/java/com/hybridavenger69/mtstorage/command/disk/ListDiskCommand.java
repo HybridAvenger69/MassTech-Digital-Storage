@@ -1,0 +1,28 @@
+package com.hybridavenger69.mtstorage.command.disk;
+
+import com.mojang.brigadier.Command;
+import com.mojang.brigadier.builder.ArgumentBuilder;
+import com.mojang.brigadier.context.CommandContext;
+import com.hybridavenger69.mtstorage.apiimpl.API;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.Component;
+
+public class ListDiskCommand implements Command<CommandSourceStack> {
+    public static ArgumentBuilder<CommandSourceStack, ?> register() {
+        return Commands.literal("list")
+            .requires(cs -> cs.hasPermission(2))
+            .executes(new ListDiskCommand())
+            .then(ListDiskForPlayerCommand.register());
+    }
+
+    @Override
+    public int run(CommandContext<CommandSourceStack> context) {
+        API.instance().getStorageDiskManager(context.getSource().getLevel())
+            .getAll()
+            .keySet()
+            .forEach(id -> context.getSource().sendSuccess(Component.literal(id.toString()), false));
+
+        return 0;
+    }
+}

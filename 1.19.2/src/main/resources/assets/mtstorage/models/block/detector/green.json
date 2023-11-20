@@ -1,0 +1,6 @@
+{
+  "parent": "mtstorage:block/detector",
+  "textures": {
+    "torch": "mtstorage:block/detector/cutouts/green"
+  }
+}

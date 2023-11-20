@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:crafting_upgrade"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.crafting_on_demand"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.crafting_on_demand.description"
+    }
+  },
+  "parent": "mtstorage:pattern_creation",
+  "criteria": {
+    "upgrade_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:crafting_upgrade"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

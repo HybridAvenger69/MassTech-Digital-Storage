@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mtstorage:block/disk_drive"
+    }
+  }
+}

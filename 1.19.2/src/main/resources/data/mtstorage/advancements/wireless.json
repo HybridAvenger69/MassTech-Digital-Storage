@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:wireless_transmitter"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.wireless"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.wireless.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "wireless_transmitter_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:wireless_transmitter"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

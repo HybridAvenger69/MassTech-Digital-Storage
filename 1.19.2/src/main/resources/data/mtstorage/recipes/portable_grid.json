@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EGE",
+    "ECE",
+    "EFE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "G": {
+      "tag": "mtstorage:grid"
+    },
+    "F": {
+      "item": "mtstorage:fluid_grid"
+    },
+    "C": {
+      "tag": "mtstorage:controller"
+    }
+  },
+  "result": {
+    "item": "mtstorage:portable_grid"
+  }
+}

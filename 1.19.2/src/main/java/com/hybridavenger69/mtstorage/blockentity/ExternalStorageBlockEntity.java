@@ -1,0 +1,107 @@
+package com.hybridavenger69.mtstorage.blockentity;
+
+import com.hybridavenger69.mtstorage.MSBlockEntities;
+import com.hybridavenger69.mtstorage.api.storage.AccessType;
+import com.hybridavenger69.mtstorage.api.storage.externalstorage.IExternalStorage;
+import com.hybridavenger69.mtstorage.apiimpl.network.node.ExternalStorageNetworkNode;
+import com.hybridavenger69.mtstorage.apiimpl.network.node.cover.CoverManager;
+import com.hybridavenger69.mtstorage.blockentity.config.*;
+import com.hybridavenger69.mtstorage.blockentity.data.BlockEntitySynchronizationParameter;
+import com.hybridavenger69.mtstorage.blockentity.data.BlockEntitySynchronizationSpec;
+import com.hybridavenger69.mtstorage.blockentity.data.RSSerializers;
+import com.hybridavenger69.mtstorage.util.LevelUtils;
+import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.data.ModelData;
+import net.minecraftforge.fluids.FluidStack;
+
+import javax.annotation.Nonnull;
+
+public class ExternalStorageBlockEntity extends NetworkNodeBlockEntity<ExternalStorageNetworkNode> {
+    public static final BlockEntitySynchronizationParameter<Integer, ExternalStorageBlockEntity> PRIORITY = IPrioritizable.createParameter();
+    public static final BlockEntitySynchronizationParameter<Integer, ExternalStorageBlockEntity> COMPARE = IComparable.createParameter();
+    public static final BlockEntitySynchronizationParameter<Integer, ExternalStorageBlockEntity> WHITELIST_BLACKLIST = IWhitelistBlacklist.createParameter();
+    public static final BlockEntitySynchronizationParameter<Integer, ExternalStorageBlockEntity> TYPE = IType.createParameter();
+    public static final BlockEntitySynchronizationParameter<AccessType, ExternalStorageBlockEntity> ACCESS_TYPE = IAccessType.createParameter();
+    public static final BlockEntitySynchronizationParameter<Long, ExternalStorageBlockEntity> STORED = new BlockEntitySynchronizationParameter<>(RSSerializers.LONG_SERIALIZER, 0L, t -> {
+        long stored = 0;
+
+        for (IExternalStorage<ItemStack> storage : t.getNode().getItemStorages()) {
+            stored += storage.getStored();
+        }
+
+        for (IExternalStorage<FluidStack> storage : t.getNode().getFluidStorages()) {
+            stored += storage.getStored();
+        }
+
+        return stored;
+    });
+    public static final BlockEntitySynchronizationParameter<Long, ExternalStorageBlockEntity> CAPACITY = new BlockEntitySynchronizationParameter<>(RSSerializers.LONG_SERIALIZER, 0L, t -> {
+        long capacity = 0;
+
+        for (IExternalStorage<ItemStack> storage : t.getNode().getItemStorages()) {
+            capacity += storage.getCapacity();
+        }
+
+        for (IExternalStorage<FluidStack> storage : t.getNode().getFluidStorages()) {
+            capacity += storage.getCapacity();
+        }
+
+        return capacity;
+    });
+
+    public static final BlockEntitySynchronizationParameter<CompoundTag, ExternalStorageBlockEntity> COVER_MANAGER = new BlockEntitySynchronizationParameter<>(EntityDataSerializers.COMPOUND_TAG, new CompoundTag(), t -> t.getNode().getCoverManager().writeToNbt(), (t, v) -> t.getNode().getCoverManager().readFromNbt(v), (initial, p) -> {
+    });
+
+    public static BlockEntitySynchronizationSpec SPEC = BlockEntitySynchronizationSpec.builder()
+        .addWatchedParameter(REDSTONE_MODE)
+        .addWatchedParameter(PRIORITY)
+        .addWatchedParameter(COMPARE)
+        .addWatchedParameter(WHITELIST_BLACKLIST)
+        .addWatchedParameter(STORED)
+        .addWatchedParameter(CAPACITY)
+        .addWatchedParameter(TYPE)
+        .addWatchedParameter(ACCESS_TYPE)
+        .addWatchedParameter(COVER_MANAGER)
+        .build();
+
+    public ExternalStorageBlockEntity(BlockPos pos, BlockState state) {
+        super(MSBlockEntities.EXTERNAL_STORAGE.get(), pos, state, SPEC, ExternalStorageNetworkNode.class);
+    }
+
+    @Override
+    @Nonnull
+    public ExternalStorageNetworkNode createNode(Level level, BlockPos pos) {
+        return new ExternalStorageNetworkNode(level, pos);
+    }
+
+    @Nonnull
+    @Override
+    public ModelData getModelData() {
+        return ModelData.builder().with(CoverManager.PROPERTY, this.getNode().getCoverManager()).build();
+    }
+
+    @Override
+    public CompoundTag writeUpdate(CompoundTag tag) {
+        super.writeUpdate(tag);
+
+        tag.put(CoverManager.NBT_COVER_MANAGER, this.getNode().getCoverManager().writeToNbt());
+
+        return tag;
+    }
+
+    @Override
+    public void readUpdate(CompoundTag tag) {
+        super.readUpdate(tag);
+
+        this.getNode().getCoverManager().readFromNbt(tag.getCompound(CoverManager.NBT_COVER_MANAGER));
+
+        requestModelDataUpdate();
+
+        LevelUtils.updateBlock(level, worldPosition);
+    }
+}

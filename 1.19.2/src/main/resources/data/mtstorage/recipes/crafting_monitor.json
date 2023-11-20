@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PAG",
+    "EMG",
+    "PAG"
+  ],
+  "key": {
+    "P": {
+      "item": "mtstorage:improved_processor"
+    },
+    "A": {
+      "item": "mtstorage:pattern"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    }
+  },
+  "result": {
+    "item": "mtstorage:crafting_monitor"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:importer"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.importing"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.importing.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "importer_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:importer"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

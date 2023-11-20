@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:pattern"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.pattern_creation"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.pattern_creation.description"
+    }
+  },
+  "parent": "mtstorage:autocrafting",
+  "criteria": {
+    "pattern_and_pattern_grid_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:pattern"
+            ]
+          },
+          {
+            "items": [
+              "mtstorage:pattern_grid"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

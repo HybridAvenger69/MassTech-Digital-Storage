@@ -1,0 +1,39 @@
+package com.hybridavenger69.mtstorage.command.network.autocrafting;
+
+import com.mojang.brigadier.builder.ArgumentBuilder;
+import com.mojang.brigadier.context.CommandContext;
+import com.hybridavenger69.mtstorage.api.network.INetwork;
+import com.hybridavenger69.mtstorage.command.network.NetworkCommand;
+import com.hybridavenger69.mtstorage.render.Styles;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.Component;
+
+
+public class CancelAllAutocraftingCommand extends NetworkCommand {
+    public static ArgumentBuilder<CommandSourceStack, ?> register() {
+        return Commands.literal("cancel")
+            .executes(new CancelAllAutocraftingCommand())
+            .then(CancelSingleAutocraftingCommand.register());
+    }
+
+    public static void sendCancelMessage(CommandContext<CommandSourceStack> context, int count) {
+        String translationKey = "commands.mtstorage.network.autocrafting.cancel.multiple";
+        if (count == 1) {
+            translationKey = "commands.mtstorage.network.autocrafting.cancel.single";
+        }
+
+        context.getSource().sendSuccess(Component.translatable(translationKey, Component.literal("" + count).setStyle(Styles.YELLOW)), false);
+    }
+
+    @Override
+    protected int run(CommandContext<CommandSourceStack> context, INetwork network) {
+        int count = network.getCraftingManager().getTasks().size();
+
+        network.getCraftingManager().getTasks().forEach(task -> network.getCraftingManager().cancel(task.getId()));
+
+        sendCancelMessage(context, count);
+
+        return 0;
+    }
+}

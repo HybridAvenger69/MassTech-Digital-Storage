@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CED",
+    "HMH",
+    "EPE"
+  ],
+  "key": {
+    "C": {
+      "item": "mtstorage:construction_core"
+    },
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "D": {
+      "item": "mtstorage:destruction_core"
+    },
+    "H": {
+      "tag": "forge:chests"
+    },
+    "M": {
+      "item": "mtstorage:cable"
+    },
+    "P": {
+      "item": "mtstorage:improved_processor"
+    }
+  },
+  "result": {
+    "item": "mtstorage:external_storage"
+  }
+}

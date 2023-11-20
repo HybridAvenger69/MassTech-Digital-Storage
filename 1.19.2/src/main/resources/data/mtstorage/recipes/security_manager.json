@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ECE",
+    "SMS",
+    "ESE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "C": {
+      "tag": "forge:chests"
+    },
+    "S": {
+      "item": "mtstorage:security_card"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    }
+  },
+  "result": {
+    "item": "mtstorage:security_manager"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ECE",
+    "RMR",
+    "EIE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "C": {
+      "item": "mtstorage:construction_core"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "M": {
+      "item": "mtstorage:cable"
+    },
+    "I": {
+      "item": "mtstorage:improved_processor"
+    }
+  },
+  "result": {
+    "item": "mtstorage:constructor"
+  }
+}

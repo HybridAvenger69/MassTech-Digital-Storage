@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:crafter"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.autocrafting"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.autocrafting.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "crafter_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:crafter"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

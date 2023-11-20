@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "connected=false": {
+      "model": "mtstorage:block/network_receiver/disconnected"
+    },
+    "connected=true": {
+      "model": "mtstorage:block/network_receiver/blue"
+    }
+  }
+}

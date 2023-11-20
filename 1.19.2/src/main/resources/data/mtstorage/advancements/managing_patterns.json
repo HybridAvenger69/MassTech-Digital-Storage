@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:crafter_manager"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.managing_patterns"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.managing_patterns.description"
+    }
+  },
+  "parent": "mtstorage:autocrafting",
+  "criteria": {
+    "crafter_manager_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:crafter_manager"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

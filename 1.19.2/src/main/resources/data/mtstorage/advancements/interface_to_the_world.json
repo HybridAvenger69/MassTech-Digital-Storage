@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:interface"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.interface_to_the_world"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.interface_to_the_world.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "interface_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:interface"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

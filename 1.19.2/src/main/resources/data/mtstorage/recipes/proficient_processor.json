@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "mtstorage:raw_proficient_processor"
+  },
+  "result": "mtstorage:proficient_processor",
+  "experience": 0.5
+}

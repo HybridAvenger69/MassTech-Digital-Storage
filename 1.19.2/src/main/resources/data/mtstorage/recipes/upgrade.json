@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EGE",
+    "EPE",
+    "EGE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "G": {
+      "tag": "forge:glass"
+    },
+    "P": {
+      "item": "mtstorage:improved_processor"
+    }
+  },
+  "result": {
+    "item": "mtstorage:upgrade"
+  }
+}

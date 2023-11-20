@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:wireless_grid",
+    "mtstorage:creative_wireless_grid",
+    "mtstorage:wireless_fluid_grid",
+    "mtstorage:creative_wireless_fluid_grid",
+    "mtstorage:wireless_crafting_monitor",
+    "mtstorage:creative_wireless_crafting_monitor"
+  ]
+}

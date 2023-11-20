@@ -1,0 +1,13 @@
+{
+  "parent": "mtstorage:block/cube_north_cutout",
+  "textures": {
+    "cutout": "mtstorage:block/disk_manipulator/cutouts/light_blue",
+    "down": "mtstorage:block/bottom",
+    "east": "mtstorage:block/disk_manipulator/right",
+    "north": "mtstorage:block/disk_manipulator/front",
+    "particle": "mtstorage:block/disk_manipulator/right",
+    "south": "mtstorage:block/disk_manipulator/back",
+    "up": "mtstorage:block/disk_manipulator/top",
+    "west": "mtstorage:block/disk_manipulator/left"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "mtstorage:block/controller_nearly",
+  "textures": {
+    "particle": "mtstorage:block/controller/off",
+    "all": "mtstorage:block/controller/on",
+    "cutout_gray": "mtstorage:block/controller/cutouts/nearly_on",
+    "cutout": "mtstorage:block/controller/cutouts/nearly_on_gray"
+  }
+}

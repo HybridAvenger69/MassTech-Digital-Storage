@@ -1,0 +1,13 @@
+{
+  "parent": "mtstorage:block/cube_north_cutout",
+  "textures": {
+    "particle": "mtstorage:block/crafting_monitor/right",
+    "east": "mtstorage:block/crafting_monitor/right",
+    "south": "mtstorage:block/crafting_monitor/back",
+    "west": "mtstorage:block/crafting_monitor/left",
+    "up": "mtstorage:block/crafting_monitor/top",
+    "down": "mtstorage:block/bottom",
+    "north": "mtstorage:block/crafting_monitor/front",
+    "cutout": "mtstorage:block/crafting_monitor/cutouts/blue"
+  }
+}

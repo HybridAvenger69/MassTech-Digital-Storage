@@ -1,0 +1,7 @@
+{
+  "parent": "mtstorage:block/constructor_destructor",
+  "textures": {
+    "front": "mtstorage:block/destructor/destructor",
+    "cutout": "mtstorage:block/destructor/cutouts/disconnected"
+  }
+}

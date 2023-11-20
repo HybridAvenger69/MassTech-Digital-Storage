@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ECE",
+    "RUR",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "C": {
+      "item": "minecraft:comparator"
+    },
+    "U": {
+      "item": "mtstorage:upgrade"
+    }
+  },
+  "result": {
+    "item": "mtstorage:regulator_upgrade"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "mtstorage:block/wireless_transmitter",
+  "textures": {
+    "cutout": "mtstorage:block/wireless_transmitter/cutouts/magenta"
+  }
+}

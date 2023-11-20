@@ -1,0 +1,13 @@
+{
+  "parent": "mtstorage:block/cube_north_cutout",
+  "textures": {
+    "particle": "mtstorage:block/fluid_grid/right",
+    "east": "mtstorage:block/fluid_grid/right",
+    "south": "mtstorage:block/fluid_grid/back",
+    "west": "mtstorage:block/fluid_grid/left",
+    "up": "mtstorage:block/fluid_grid/top",
+    "down": "mtstorage:block/bottom",
+    "north": "mtstorage:block/fluid_grid/front",
+    "cutout": "mtstorage:block/fluid_grid/cutouts/gray"
+  }
+}

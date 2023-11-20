@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "connected=false": {
+      "model": "mtstorage:block/relay/disconnected"
+    },
+    "connected=true": {
+      "model": "mtstorage:block/relay/brown"
+    }
+  }
+}

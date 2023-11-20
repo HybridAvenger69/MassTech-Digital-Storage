@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EPE",
+    "EME",
+    "EAE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "P": {
+      "tag": "forge:ender_pearls"
+    },
+    "M": {
+      "tag": "mtstorage:crafting_monitor"
+    },
+    "A": {
+      "item": "mtstorage:advanced_processor"
+    }
+  },
+  "result": {
+    "item": "mtstorage:wireless_crafting_monitor"
+  }
+}

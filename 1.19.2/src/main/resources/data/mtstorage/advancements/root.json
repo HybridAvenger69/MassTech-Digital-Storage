@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:creative_controller"
+    },
+    "title": {
+      "translate": "itemGroup.mtstorage"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.controlling.description"
+    },
+    "background": "mtstorage:textures/gui/advancements.png"
+  },
+  "criteria": {
+    "controller_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:controller"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

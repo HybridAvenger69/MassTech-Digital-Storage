@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:detector"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.detecting"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.detecting.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "detector_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:detector"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

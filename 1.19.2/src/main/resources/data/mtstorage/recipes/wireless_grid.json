@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EPE",
+    "EGE",
+    "EAE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "P": {
+      "tag": "forge:ender_pearls"
+    },
+    "G": {
+      "tag": "mtstorage:grid"
+    },
+    "A": {
+      "item": "mtstorage:advanced_processor"
+    }
+  },
+  "result": {
+    "item": "mtstorage:wireless_grid"
+  }
+}

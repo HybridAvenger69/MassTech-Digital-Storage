@@ -1,0 +1,8 @@
+{
+  "parent": "mtstorage:block/cube_all_cutout",
+  "textures": {
+    "particle": "mtstorage:block/network_receiver/network_receiver",
+    "all": "mtstorage:block/network_receiver/network_receiver",
+    "cutout": "mtstorage:block/network_receiver/cutouts/gray"
+  }
+}

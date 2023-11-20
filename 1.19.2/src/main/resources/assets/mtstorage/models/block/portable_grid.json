@@ -1,0 +1,4 @@
+{
+  "render_type": "cutout",
+  "loader": "mtstorage:portable_grid"
+}

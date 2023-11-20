@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:security_manager"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.security"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.security.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "security_manager_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:security_manager"
+            ]
+          },
+          {
+            "items": [
+              "mtstorage:security_card"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

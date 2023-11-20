@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:exporter"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.exporting"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.exporting.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "exporter_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:exporter"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

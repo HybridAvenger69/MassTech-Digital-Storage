@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EOE",
+    "CUC",
+    "EEE"
+  ],
+  "key": {
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    },
+    "C": {
+      "tag": "mtstorage:crafting_tables"
+    },
+    "O": {
+      "item": "mtstorage:construction_core"
+    },
+    "U": {
+      "item": "mtstorage:upgrade"
+    }
+  },
+  "result": {
+    "item": "mtstorage:crafting_upgrade"
+  }
+}

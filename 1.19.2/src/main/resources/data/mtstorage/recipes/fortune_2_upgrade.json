@@ -1,0 +1,8 @@
+{
+  "type": "mtstorage:upgrade_with_enchanted_book",
+  "enchantment": {
+    "level": 2,
+    "id": "minecraft:fortune"
+  },
+  "result": "mtstorage:fortune_2_upgrade"
+}

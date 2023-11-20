@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "EPE",
+    "EME",
+    "ERE"
+  ],
+  "key": {
+    "M": {
+      "item": "mtstorage:machine_casing"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "P": {
+      "item": "mtstorage:256k_fluid_storage_part"
+    },
+    "E": {
+      "item": "mtstorage:quartz_enriched_tech"
+    }
+  },
+  "result": {
+    "item": "mtstorage:256k_fluid_storage_block"
+  }
+}

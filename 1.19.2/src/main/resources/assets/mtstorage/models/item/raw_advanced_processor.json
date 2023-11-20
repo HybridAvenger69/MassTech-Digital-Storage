@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mtstorage:item/raw_advanced_processor"
+  }
+}

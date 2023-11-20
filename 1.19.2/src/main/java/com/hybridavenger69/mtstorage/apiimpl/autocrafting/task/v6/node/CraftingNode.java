@@ -1,0 +1,110 @@
+package com.hybridavenger69.mtstorage.apiimpl.autocrafting.task.v6.node;
+
+import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPattern;
+import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPatternContainer;
+import com.hybridavenger69.mtstorage.api.autocrafting.task.CraftingTaskReadException;
+import com.hybridavenger69.mtstorage.api.network.INetwork;
+import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDisk;
+import com.hybridavenger69.mtstorage.api.util.Action;
+import com.hybridavenger69.mtstorage.apiimpl.autocrafting.task.v6.IoUtil;
+import com.hybridavenger69.mtstorage.util.StackUtils;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+public class CraftingNode extends Node {
+    private static final String NBT_RECIPE = "Recipe";
+
+    private final NonNullList<ItemStack> recipe;
+
+    public CraftingNode(ICraftingPattern pattern, boolean root, NonNullList<ItemStack> recipe) {
+        super(pattern, root);
+
+        this.recipe = recipe;
+    }
+
+    public CraftingNode(INetwork network, CompoundTag tag) throws CraftingTaskReadException {
+        super(network, tag);
+
+        this.recipe = NonNullList.create();
+
+        ListTag tookList = tag.getList(NBT_RECIPE, Tag.TAG_COMPOUND);
+        for (int i = 0; i < tookList.size(); ++i) {
+            recipe.add(StackUtils.deserializeStackFromNbt(tookList.getCompound(i)));
+        }
+    }
+
+    @Override
+    public void update(INetwork network, int ticks, NodeList nodes, IStorageDisk<ItemStack> internalStorage, IStorageDisk<FluidStack> internalFluidStorage, NodeListener listener) {
+        for (ICraftingPatternContainer container : network.getCraftingManager().getAllContainers(getPattern())) {
+            int interval = container.getUpdateInterval();
+            if (interval < 0) {
+                throw new IllegalStateException(container + " has an update interval of < 0");
+            }
+
+            if (interval == 0 || ticks % interval == 0) {
+                for (int i = 0; i < container.getMaximumSuccessfulCraftingUpdates(); i++) {
+
+                    var simulatedRequirements = requirements.getSingleItemRequirementSet(true);
+                    if(simulatedRequirements == null) {
+                        return;
+                    }
+
+                    if (IoUtil.extractFromInternalItemStorage(simulatedRequirements, internalStorage, Action.SIMULATE) != null) {
+
+                        var actualRequirements = requirements.getSingleItemRequirementSet(false);
+                        if(actualRequirements == null) {
+                            return;
+                        }
+
+                        IoUtil.extractFromInternalItemStorage(actualRequirements, internalStorage, Action.PERFORM);
+
+                        ItemStack output = getPattern().getOutput(recipe);
+
+                        if (!isRoot()) {
+                            internalStorage.insert(output, output.getCount(), Action.PERFORM);
+                        } else {
+                            ItemStack remainder = network.insertItem(output, output.getCount(), Action.PERFORM);
+
+                            internalStorage.insert(remainder, remainder.getCount(), Action.PERFORM);
+                        }
+
+                        // Byproducts need to always be inserted in the internal storage for later reuse further in the task.
+                        // Regular outputs can be inserted into the network *IF* it's a root since it's *NOT* expected to be used later on.
+                        for (ItemStack byp : getPattern().getByproducts(recipe)) {
+                            internalStorage.insert(byp, byp.getCount(), Action.PERFORM);
+                        }
+
+                        next();
+
+                        listener.onSingleDone(this);
+
+                        if (getQuantity() <= 0) {
+                            listener.onAllDone(this);
+                            return;
+                        }
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public CompoundTag writeToNbt() {
+        CompoundTag tag = super.writeToNbt();
+
+        ListTag tookList = new ListTag();
+        for (ItemStack took : this.recipe) {
+            tookList.add(StackUtils.serializeStackToNbt(took));
+        }
+
+        tag.put(NBT_RECIPE, tookList);
+
+        return tag;
+    }
+}

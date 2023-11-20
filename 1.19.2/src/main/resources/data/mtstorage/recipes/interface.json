@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "UIU",
+    "RMR",
+    "UEU"
+  ],
+  "key": {
+    "I": {
+      "item": "mtstorage:importer"
+    },
+    "E": {
+      "item": "mtstorage:exporter"
+    },
+    "M": {
+      "item": "mtstorage:machine_casing"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "U": {
+      "item": "mtstorage:quartz_enriched_tech"
+    }
+  },
+  "result": {
+    "item": "mtstorage:interface"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "mtstorage:disk_drive"
+    },
+    "title": {
+      "translate": "advancements.mtstorage.drives"
+    },
+    "description": {
+      "translate": "advancements.mtstorage.drives.description"
+    }
+  },
+  "parent": "mtstorage:root",
+  "criteria": {
+    "disk_drive_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:disk_drive"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
