@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.node.ICoverable;
 import com.hybridavenger69.mtstorage.api.util.Action;
@@ -31,7 +30,7 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemHandlerHelper;
 
 public class ExporterNetworkNode extends NetworkNode implements IComparable, IType, ICoverable {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "exporter");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "exporter");
 
     private static final String NBT_COMPARE = "Compare";
     private static final String NBT_TYPE = "Type";

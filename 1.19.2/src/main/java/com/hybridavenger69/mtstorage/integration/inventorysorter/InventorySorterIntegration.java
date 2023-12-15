@@ -14,6 +14,6 @@ public class InventorySorterIntegration {
 
     public static void register() {
         // Prevent items moving while scrolling through slots with Inventory Sorter in the Crafter Manager
-        // InterModComms.sendTo("inventorysorter", "slotblacklist", () -> "com.refinedmods.mtstorage.container.slot.CrafterManagerSlot");
+        // InterModComms.sendTo("inventorysorter", "slotblacklist", () -> "com.hybridavenger69.mtstorage.container.slot.CrafterManagerSlot");
     }
 }

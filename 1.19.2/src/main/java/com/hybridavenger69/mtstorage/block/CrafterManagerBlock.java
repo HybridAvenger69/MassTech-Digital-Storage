@@ -32,24 +32,24 @@ public class CrafterManagerBlock extends ColoredNetworkBlock {
         return new CrafterManagerBlockEntity(pos, state);
     }
 
-    //@Override
+    @Override
     @SuppressWarnings("deprecation")
-    //public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-    //  InteractionResult result = MSBlocks.CRAFTER_MANAGER.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
-    //  if (result != InteractionResult.PASS) {
-    //      return result;
-    //  }
-//
-    //      if (!level.isClientSide) {
-    //      return NetworkUtils.attempt(level, pos, player, () -> NetworkHooks.openScreen(
-    //          (ServerPlayer) player,
-    //          new CrafterManagerMenuProvider((CrafterManagerBlockEntity) level.getBlockEntity(pos)),
-    //          buf -> CrafterManagerMenuProvider.writeToBuffer(buf, level, pos)
-    //      ), Permission.MODIFY, Permission.AUTOCRAFTING);
-    //  }
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        InteractionResult result = MSBlocks.CRAFTER_MANAGER.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
+        if (result != InteractionResult.PASS) {
+            return result;
+        }
 
-    //  return InteractionResult.SUCCESS;
-    //}
+        if (!level.isClientSide) {
+            return NetworkUtils.attempt(level, pos, player, () -> NetworkHooks.openScreen(
+                (ServerPlayer) player,
+                new CrafterManagerMenuProvider((CrafterManagerBlockEntity) level.getBlockEntity(pos)),
+                buf -> CrafterManagerMenuProvider.writeToBuffer(buf, level, pos)
+            ), Permission.MODIFY, Permission.AUTOCRAFTING);
+        }
+
+        return InteractionResult.SUCCESS;
+    }
 
     @Override
     public boolean hasConnectedState() {

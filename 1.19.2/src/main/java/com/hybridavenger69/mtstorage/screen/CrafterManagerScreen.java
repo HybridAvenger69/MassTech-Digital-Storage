@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.screen;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
@@ -84,7 +83,7 @@ public class CrafterManagerScreen extends BaseScreen<CrafterManagerContainerMenu
 
     @Override
     public void renderBackground(PoseStack poseStack, int x, int y, int mouseX, int mouseY) {
-        bindTexture(HybridIDS.MTStorage_MODID, "gui/crafter_manager.png");
+        bindTexture(MS.ID, "gui/crafter_manager.png");
 
         blit(poseStack, x, y, 0, 0, imageWidth, getTopHeight());
 
@@ -136,7 +135,7 @@ public class CrafterManagerScreen extends BaseScreen<CrafterManagerContainerMenu
                 if (y >= getTopHeight() - 1 && y < getTopHeight() + getVisibleRows() * 18 - 1) {
                     RenderSystem.setShaderColor(1, 1, 1, 1);
 
-                    bindTexture(HybridIDS.MTStorage_MODID, "gui/crafter_manager.png");
+                    bindTexture(MS.ID, "gui/crafter_manager.png");
 
                     blit(poseStack, 7, y, 0, 174, 18 * 9, 18);
 

@@ -16,12 +16,7 @@ public class CraftingSettingsScreen extends AmountSpecifyingScreen<CraftingSetti
     private final IGridStack stack;
 
     public CraftingSettingsScreen(BaseScreen parent, Player player, IGridStack stack) {
-        super(parent, new CraftingSettingsContainerMenu(player, stack) {
-            @Override
-            public void updatePatternSlotPositions(int patternScrollOffset) {
-
-            }
-        }, 172, 99, player.getInventory(), Component.translatable("container.crafting"));
+        super(parent, new CraftingSettingsContainerMenu(player, stack), 172, 99, player.getInventory(), Component.translatable("container.crafting"));
 
         this.stack = stack;
     }

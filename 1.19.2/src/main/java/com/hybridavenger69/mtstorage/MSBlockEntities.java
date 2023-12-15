@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.api.network.NetworkType;
 import com.hybridavenger69.mtstorage.api.network.grid.GridType;
 import com.hybridavenger69.mtstorage.apiimpl.storage.FluidStorageType;
@@ -19,7 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public final class MSBlockEntities {
-    public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, HybridIDS.MTStorage_MODID);
+    public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MS.ID);
 
     public static final RegistryObject<BlockEntityType<ControllerBlockEntity>> CONTROLLER =
         REGISTRY.register("controller", () -> registerSynchronizationParameters(ControllerBlockEntity.SPEC, BlockEntityType.Builder.of((pos, state) -> new ControllerBlockEntity(NetworkType.NORMAL, pos, state), MSBlocks.CONTROLLER.getBlocks()).build(null)));
@@ -71,6 +70,9 @@ public final class MSBlockEntities {
             REGISTRY.register("2048k_storage_block", () -> registerSynchronizationParameters(StorageBlockEntity.SPEC, BlockEntityType.Builder.of((pos, state) -> new StorageBlockEntity(ItemStorageType.TWO_ZERO_FOUR_EIGHT_K, pos, state), MSBlocks.STORAGE_BLOCKS.get(ItemStorageType.TWO_ZERO_FOUR_EIGHT_K).get()).build(null)));
 
 
+
+
+
     public static final RegistryObject<BlockEntityType<StorageBlockEntity>> CREATIVE_STORAGE_BLOCK =
         REGISTRY.register("creative_storage_block", () -> registerSynchronizationParameters(StorageBlockEntity.SPEC, BlockEntityType.Builder.of((pos, state) -> new StorageBlockEntity(ItemStorageType.CREATIVE, pos, state), MSBlocks.STORAGE_BLOCKS.get(ItemStorageType.CREATIVE).get()).build(null)));
     public static final RegistryObject<BlockEntityType<FluidStorageBlockEntity>> SIXTY_FOUR_K_FLUID_STORAGE_BLOCK =
@@ -100,7 +102,7 @@ public final class MSBlockEntities {
     public static final RegistryObject<BlockEntityType<DiskManipulatorBlockEntity>> DISK_MANIPULATOR =
         REGISTRY.register("disk_manipulator", () -> registerSynchronizationParameters(DiskManipulatorBlockEntity.SPEC, BlockEntityType.Builder.of(DiskManipulatorBlockEntity::new, MSBlocks.DISK_MANIPULATOR.getBlocks()).build(null)));
     public static final RegistryObject<BlockEntityType<PortableGridBlockEntity>> PORTABLE_GRID =
-       REGISTRY.register("portable_grid", () -> registerSynchronizationParameters(PortableGridBlockEntity.SPEC, BlockEntityType.Builder.of((pos, state) -> new PortableGridBlockEntity(PortableGridBlockItem.Type.NORMAL, pos, state), MSBlocks.PORTABLE_GRID.get()).build(null)));
+        REGISTRY.register("portable_grid", () -> registerSynchronizationParameters(PortableGridBlockEntity.SPEC, BlockEntityType.Builder.of((pos, state) -> new PortableGridBlockEntity(PortableGridBlockItem.Type.NORMAL, pos, state), MSBlocks.PORTABLE_GRID.get()).build(null)));
     public static final RegistryObject<BlockEntityType<PortableGridBlockEntity>> CREATIVE_PORTABLE_GRID =
         REGISTRY.register("creative_portable_grid", () -> registerSynchronizationParameters(PortableGridBlockEntity.SPEC, BlockEntityType.Builder.of((pos, state) -> new PortableGridBlockEntity(PortableGridBlockItem.Type.CREATIVE, pos, state), MSBlocks.CREATIVE_PORTABLE_GRID.get()).build(null)));
     public static final RegistryObject<BlockEntityType<CrafterBlockEntity>> CRAFTER =
@@ -115,6 +117,5 @@ public final class MSBlockEntities {
         return t;
     }
 
-    private MSBlockEntities() {
-    }
+
 }

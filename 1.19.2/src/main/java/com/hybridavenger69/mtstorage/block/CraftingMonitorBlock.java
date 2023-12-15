@@ -33,26 +33,26 @@ public class CraftingMonitorBlock extends ColoredNetworkBlock {
         return new CraftingMonitorBlockEntity(pos, state);
     }
 
-    //@Override
+    @Override
     @SuppressWarnings("deprecation")
-    //public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-    //  InteractionResult result = MSBlocks.CRAFTING_MONITOR.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
-    //  if (result != InteractionResult.PASS) {
-    //      return result;
-    //  }
-//
-            //      if (!level.isClientSide) {
-    //CraftingMonitorBlockEntity blockEntity = (CraftingMonitorBlockEntity) level.getBlockEntity(pos);
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        InteractionResult result = MSBlocks.CRAFTING_MONITOR.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
+        if (result != InteractionResult.PASS) {
+            return result;
+        }
 
-//            return NetworkUtils.attempt(level, pos, player, () -> NetworkHooks.openScreen(
-    //              (ServerPlayer) player,
-    //          new CraftingMonitorMenuProvider(MSContainerMenus.CRAFTING_MONITOR.get(), blockEntity.getNode(), blockEntity),
-    //          pos
-    //      ), Permission.MODIFY, Permission.AUTOCRAFTING);
-    //  }
+        if (!level.isClientSide) {
+            CraftingMonitorBlockEntity blockEntity = (CraftingMonitorBlockEntity) level.getBlockEntity(pos);
 
-    //  return InteractionResult.SUCCESS;
-    //}
+            return NetworkUtils.attempt(level, pos, player, () -> NetworkHooks.openScreen(
+                (ServerPlayer) player,
+                new CraftingMonitorMenuProvider(MSContainerMenus.CRAFTING_MONITOR.get(), blockEntity.getNode(), blockEntity),
+                pos
+            ), Permission.MODIFY, Permission.AUTOCRAFTING);
+        }
+
+        return InteractionResult.SUCCESS;
+    }
 
     @Override
     public boolean hasConnectedState() {

@@ -2,7 +2,6 @@ package com.hybridavenger69.mtstorage.recipe;
 
 
 import com.google.common.collect.Lists;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.item.CoverItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
@@ -22,7 +21,7 @@ public class HollowCoverRecipe extends CustomRecipe {
     }
 
     public static boolean stackMatches(ItemStack first) {
-        return first.getItem() == MSItems.COVER.get();
+        return first.getItem() == com.hybridavenger69.mtstorage.MSItems.COVER.get();
     }
 
     public static boolean matches(List<ItemStack> list) {
@@ -39,7 +38,7 @@ public class HollowCoverRecipe extends CustomRecipe {
 
     public static ItemStack getResult(ItemStack first) {
         ItemStack stack = CoverItem.getItem(first);
-        ItemStack result = new ItemStack(MSItems.HOLLOW_COVER.get());
+        ItemStack result = new ItemStack(com.hybridavenger69.mtstorage.MSItems.HOLLOW_COVER.get());
         CoverItem.setItem(result, stack);
         return result;
     }

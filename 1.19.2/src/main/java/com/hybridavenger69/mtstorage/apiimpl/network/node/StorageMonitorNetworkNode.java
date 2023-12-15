@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.security.Permission;
 import com.hybridavenger69.mtstorage.api.util.Action;
@@ -37,7 +36,7 @@ import java.util.Map;
 public class StorageMonitorNetworkNode extends NetworkNode implements IComparable, IType {
     public static final int DEPOSIT_ALL_MAX_DELAY = 500;
 
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "storage_monitor");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "storage_monitor");
 
     private static final String NBT_COMPARE = "Compare";
     private static final String NBT_TYPE = "Type";

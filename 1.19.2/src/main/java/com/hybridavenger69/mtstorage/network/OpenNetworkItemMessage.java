@@ -1,11 +1,9 @@
 package com.hybridavenger69.mtstorage.network;
 
 import com.hybridavenger69.mtstorage.apiimpl.API;
-//import com.hybridavenger69.mtstorage.apiimpl.network.grid.factory.PortableGridGridFactory;
 import com.hybridavenger69.mtstorage.apiimpl.network.grid.factory.PortableGridGridFactory;
 import com.hybridavenger69.mtstorage.inventory.player.PlayerSlot;
 import com.hybridavenger69.mtstorage.item.NetworkItem;
-//import com.hybridavenger69.mtstorage.item.blockitem.PortableGridBlockItem;
 import com.hybridavenger69.mtstorage.item.blockitem.PortableGridBlockItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -51,5 +49,3 @@ public class OpenNetworkItemMessage {
         ctx.get().setPacketHandled(true);
     }
 }
-
-

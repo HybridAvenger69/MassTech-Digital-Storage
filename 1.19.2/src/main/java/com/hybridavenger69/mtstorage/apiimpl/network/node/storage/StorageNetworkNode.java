@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node.storage;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.INetwork;
 import com.hybridavenger69.mtstorage.api.storage.AccessType;
@@ -43,16 +42,16 @@ import java.util.List;
 import java.util.UUID;
 
 public class StorageNetworkNode extends NetworkNode implements IStorageScreen, IStorageProvider, IComparable, IWhitelistBlacklist, IPrioritizable, IAccessType, IStorageDiskContainerContext {
-    public static final ResourceLocation ONE_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "1k_storage_block");
-    public static final ResourceLocation FOUR_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "4k_storage_block");
-    public static final ResourceLocation SIXTEEN_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "16k_storage_block");
-    public static final ResourceLocation SIXTY_FOUR_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "64k_storage_block");
-    public static final ResourceLocation ONE_TWENTY_EIGHT_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "128k_storage_block");
-    public static final ResourceLocation TWO_FIFTY_SIX_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "256k_storage_block");
-    public static final ResourceLocation FIVE_TWELVE_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "512k_storage_block");
-    public static final ResourceLocation ONE_ZERO_TWENTY_FOUR_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "1024k_storage_block");
-    public static final ResourceLocation TWO_ZERO_FOURTY_EIGHT_K_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "2048k_storage_block");
-    public static final ResourceLocation CREATIVE_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "creative_storage_block");
+    public static final ResourceLocation ONE_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "1k_storage_block");
+    public static final ResourceLocation FOUR_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "4k_storage_block");
+    public static final ResourceLocation SIXTEEN_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "16k_storage_block");
+    public static final ResourceLocation SIXTY_FOUR_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "64k_storage_block");
+    public static final ResourceLocation ONE_TWENTY_EIGHT_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "128k_storage_block");
+    public static final ResourceLocation TWO_FIFTY_SIX_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "256k_storage_block");
+    public static final ResourceLocation FIVE_TWELVE_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "512k_storage_block");
+    public static final ResourceLocation ONE_ZERO_TWENTY_FOUR_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "1024k_storage_block");
+    public static final ResourceLocation TWO_ZERO_FOURTY_EIGHT_K_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "2048k_storage_block");
+    public static final ResourceLocation CREATIVE_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "creative_storage_block");
     public static final String NBT_ID = "Id";
     private static final Logger LOGGER = LogManager.getLogger(StorageNetworkNode.class);
     private static final String NBT_PRIORITY = "Priority";
@@ -105,19 +104,31 @@ public class StorageNetworkNode extends NetworkNode implements IStorageScreen, I
 
     @Override
     public int getEnergyUsage() {
-        return switch (type) {
-            case ONE_K -> MS.SERVER_CONFIG.getStorageBlock().getOneKUsage();
-            case FOUR_K -> MS.SERVER_CONFIG.getStorageBlock().getFourKUsage();
-            case SIXTEEN_K -> MS.SERVER_CONFIG.getStorageBlock().getSixteenKUsage();
-            case SIXTY_FOUR_K -> MS.SERVER_CONFIG.getStorageBlock().getSixtyFourKUsage();
-            case ONE_TWENTY_EIGHT_K -> MS.SERVER_CONFIG.getStorageBlock().getOneTwentyEightKUsage();
-            case TWO_FIFTY_SIX_K -> MS.SERVER_CONFIG.getStorageBlock().getTwoFiftySixk();
-            case FIVE_TWELVE_K -> MS.SERVER_CONFIG.getStorageBlock().getFiveTwelvek();
-            case ONE_ZERO_TWENTY_FOUR_K -> MS.SERVER_CONFIG.getStorageBlock().getOneZeroTwentyFourk();
-            case TWO_ZERO_FOUR_EIGHT_K -> MS.SERVER_CONFIG.getStorageBlock().getTwoZeroFourtyEightKUsage();
-            case CREATIVE -> MS.SERVER_CONFIG.getStorageBlock().getCreativeUsage();
-            default -> 0;
-        };
+        switch (type) {
+            case ONE_K:
+                return MS.SERVER_CONFIG.getStorageBlock().getOneKUsage();
+            case FOUR_K:
+                return MS.SERVER_CONFIG.getStorageBlock().getFourKUsage();
+            case SIXTEEN_K:
+                return MS.SERVER_CONFIG.getStorageBlock().getSixteenKUsage();
+            case SIXTY_FOUR_K:
+                return MS.SERVER_CONFIG.getStorageBlock().getSixtyFourKUsage();
+            case ONE_TWENTY_EIGHT_K:
+                return MS.SERVER_CONFIG.getStorageBlock().getOneTwentyEightKUsage();
+            case TWO_FIFTY_SIX_K:
+                return MS.SERVER_CONFIG.getStorageBlock().getTwoFiftySixkusage();
+            case FIVE_TWELVE_K:
+                return  MS.SERVER_CONFIG.getStorageBlock().getFiveTwelvekUsage();
+            case ONE_ZERO_TWENTY_FOUR_K:
+                return  MS.SERVER_CONFIG.getStorageBlock().getOneZeroTwentyFourkUsage();
+            case TWO_ZERO_FOUR_EIGHT_K:
+                return MS.SERVER_CONFIG.getStorageBlock().getTwoZeroFourtyEightKUsage();
+            case CREATIVE:
+                return MS.SERVER_CONFIG.getStorageBlock().getCreativeUsage();
+
+            default:
+                return 0;
+        }
     }
 
     @Override

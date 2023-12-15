@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mtstorage:purple_grid"
+    },
+    {
+      "item": "mtstorage:advanced_processor"
+    },
+    {
+      "item": "mtstorage:pattern"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:purple_pattern_grid"
+  }
+}

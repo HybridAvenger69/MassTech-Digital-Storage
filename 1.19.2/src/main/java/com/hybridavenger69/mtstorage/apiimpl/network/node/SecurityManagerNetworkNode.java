@@ -1,8 +1,6 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.network.INetwork;
 import com.hybridavenger69.mtstorage.api.network.security.ISecurityCard;
 import com.hybridavenger69.mtstorage.api.network.security.ISecurityCardContainer;
@@ -27,17 +25,17 @@ import java.util.List;
 import java.util.UUID;
 
 public class SecurityManagerNetworkNode extends NetworkNode implements ISecurityCardContainer {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "security_manager");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "security_manager");
 
     private final List<ISecurityCard> cards = new ArrayList<>();
     private final BaseItemHandler editCard = new BaseItemHandler(1)
-        .addValidator(new ItemValidator(MSItems.SECURITY_CARD.get()))
+        .addValidator(new ItemValidator(com.hybridavenger69.mtstorage.MSItems.SECURITY_CARD.get()))
         .addListener(new NetworkNodeInventoryListener(this));
     private ISecurityCard globalCard;
     public SecurityManagerNetworkNode(Level level, BlockPos pos) {
         super(level, pos);
     }    private final BaseItemHandler cardsInv = new BaseItemHandler(9 * 2)
-        .addValidator(new ItemValidator(MSItems.SECURITY_CARD.get()))
+        .addValidator(new ItemValidator(com.hybridavenger69.mtstorage.MSItems.SECURITY_CARD.get()))
         .addListener(new NetworkNodeInventoryListener(this))
         .addListener(((handler, slot, reading) -> {
             if (!level.isClientSide) {

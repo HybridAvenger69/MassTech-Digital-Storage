@@ -66,32 +66,32 @@ public class DetectorBlock extends ColoredNetworkBlock {
         return (blockEntity instanceof DetectorBlockEntity && ((DetectorBlockEntity) blockEntity).getNode().isPowered()) ? 15 : 0;
     }
 
-    //@Override
+    @Override
     @SuppressWarnings("deprecation")
-    //public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-            //  ColorMap<DetectorBlock> colorMap = MSBlocks.DETECTOR;
-    // DyeColor color = DyeColor.getColor(player.getItemInHand(hand));
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        ColorMap<DetectorBlock> colorMap = MSBlocks.DETECTOR;
+        DyeColor color = DyeColor.getColor(player.getItemInHand(hand));
 
-            //  if (color != null && !state.getBlock().equals(colorMap.get(color).get())) {
-    //BlockState newState = colorMap.get(color).get().defaultBlockState().setValue(POWERED, state.getValue(POWERED));
+        if (color != null && !state.getBlock().equals(colorMap.get(color).get())) {
+            BlockState newState = colorMap.get(color).get().defaultBlockState().setValue(POWERED, state.getValue(POWERED));
 
-    //      return MSBlocks.DETECTOR.setBlockState(newState, player.getItemInHand(hand), level, pos, player);
-    //  }
+            return MSBlocks.DETECTOR.setBlockState(newState, player.getItemInHand(hand), level, pos, player);
+        }
 
-    //  if (!level.isClientSide) {
-    //      return NetworkUtils.attemptModify(level, pos, player, () -> NetworkHooks.openScreen(
-    //          (ServerPlayer) player,
-            //          new BlockEntityMenuProvider<DetectorBlockEntity>(
-    //      Component.translatable("gui.mtstorage.detector"),
-    //              (blockEntity, windowId, inventory, p) -> new DetectorContainerMenu(blockEntity, player, windowId),
-    //              pos
-    //          ),
-    //          pos
-    //      ));
-    //  }
+        if (!level.isClientSide) {
+            return NetworkUtils.attemptModify(level, pos, player, () -> NetworkHooks.openScreen(
+                (ServerPlayer) player,
+                new BlockEntityMenuProvider<DetectorBlockEntity>(
+                    Component.translatable("gui.mtstorage.detector"),
+                    (blockEntity, windowId, inventory, p) -> new DetectorContainerMenu(blockEntity, player, windowId),
+                    pos
+                ),
+                pos
+            ));
+        }
 
-    //  return InteractionResult.SUCCESS;
-    // }
+        return InteractionResult.SUCCESS;
+    }
 
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {

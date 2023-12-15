@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.apiimpl.API;
 import com.hybridavenger69.mtstorage.config.ClientConfig;
 import com.hybridavenger69.mtstorage.config.ServerConfig;
@@ -20,9 +19,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(HybridIDS.MTStorage_MODID)
+@Mod(MS.ID)
 public final class MS {
-
+    public static final String ID = "mtstorage";
     public static final String NAME = "MassTech Digital Storage";
 
     public static final NetworkHandler NETWORK_HANDLER = new NetworkHandler();

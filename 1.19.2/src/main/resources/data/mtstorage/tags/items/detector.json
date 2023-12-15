@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_detector",
+    "mtstorage:orange_detector",
+    "mtstorage:magenta_detector",
+    "mtstorage:detector",
+    "mtstorage:yellow_detector",
+    "mtstorage:lime_detector",
+    "mtstorage:pink_detector",
+    "mtstorage:gray_detector",
+    "mtstorage:light_gray_detector",
+    "mtstorage:cyan_detector",
+    "mtstorage:purple_detector",
+    "mtstorage:blue_detector",
+    "mtstorage:brown_detector",
+    "mtstorage:green_detector",
+    "mtstorage:red_detector",
+    "mtstorage:black_detector"
+  ]
+}

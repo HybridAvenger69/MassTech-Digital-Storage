@@ -30,9 +30,4 @@ public class SecurityManagerContainerMenu extends BaseContainerMenu {
         transferManager.addBiTransfer(player.getInventory(), securityManager.getNode().getCardsItems());
         transferManager.addTransfer(securityManager.getNode().getEditCard(), player.getInventory());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

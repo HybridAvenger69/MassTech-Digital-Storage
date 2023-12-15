@@ -10,9 +10,4 @@ public class ControllerContainerMenu extends BaseContainerMenu {
 
         addPlayerInventory(8, 99);
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

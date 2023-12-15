@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mtstorage:yellow_grid"
+    },
+    {
+      "item": "mtstorage:advanced_processor"
+    },
+    {
+      "tag": "mtstorage:crafting_tables"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:yellow_crafting_grid"
+  }
+}

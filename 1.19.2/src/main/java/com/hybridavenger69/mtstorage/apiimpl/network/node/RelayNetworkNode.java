@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.blockentity.config.RedstoneMode;
 import net.minecraft.core.BlockPos;
@@ -9,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 
 public class RelayNetworkNode extends NetworkNode {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "relay");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "relay");
 
     public RelayNetworkNode(Level level, BlockPos pos) {
         super(level, pos);

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_wireless_transmitter",
+    "mtstorage:orange_wireless_transmitter",
+    "mtstorage:magenta_wireless_transmitter",
+    "mtstorage:wireless_transmitter",
+    "mtstorage:yellow_wireless_transmitter",
+    "mtstorage:lime_wireless_transmitter",
+    "mtstorage:pink_wireless_transmitter",
+    "mtstorage:gray_wireless_transmitter",
+    "mtstorage:light_gray_wireless_transmitter",
+    "mtstorage:cyan_wireless_transmitter",
+    "mtstorage:purple_wireless_transmitter",
+    "mtstorage:blue_wireless_transmitter",
+    "mtstorage:brown_wireless_transmitter",
+    "mtstorage:green_wireless_transmitter",
+    "mtstorage:red_wireless_transmitter",
+    "mtstorage:black_wireless_transmitter"
+  ]
+}

@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.blockentity.*;
 import com.hybridavenger69.mtstorage.container.*;
 import com.hybridavenger69.mtstorage.container.factory.*;
@@ -11,17 +10,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public final class MSContainerMenus {
-    public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, HybridIDS.MTStorage_MODID);
+    public static final DeferredRegister<MenuType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MS.ID);
 
     public static final RegistryObject<MenuType<ControllerContainerMenu>> CONTROLLER = REGISTRY.register("controller", () -> IForgeMenuType.create(((windowId, inv, data) -> new ControllerContainerMenu(null, inv.player, windowId))));
     public static final RegistryObject<MenuType<GridContainerMenu>> GRID = REGISTRY.register("grid", () -> IForgeMenuType.create(new GridContainerFactory()));
     public static final RegistryObject<MenuType<DetectorContainerMenu>> DETECTOR = REGISTRY.register("detector", () -> IForgeMenuType.create(new BlockEntityContainerFactory<DetectorContainerMenu, DetectorBlockEntity>((windowId, inv, blockEntity) -> new DetectorContainerMenu(blockEntity, inv.player, windowId))));
-    public static final RegistryObject<MenuType<ExporterContainerMenu>> EXPORTER = REGISTRY.register("exporter", () -> IForgeMenuType.create(new BlockEntityContainerFactory<ExporterContainerMenu, ExporterBlockEntity>((windowId, inv, blockEntity) -> new ExporterContainerMenu(blockEntity, inv.player, windowId) {
-        @Override
-        public void updatePatternSlotPositions(int patternScrollOffset) {
-
-        }
-    })));
+    public static final RegistryObject<MenuType<ExporterContainerMenu>> EXPORTER = REGISTRY.register("exporter", () -> IForgeMenuType.create(new BlockEntityContainerFactory<ExporterContainerMenu, ExporterBlockEntity>((windowId, inv, blockEntity) -> new ExporterContainerMenu(blockEntity, inv.player, windowId))));
     public static final RegistryObject<MenuType<ExternalStorageContainerMenu>> EXTERNAL_STORAGE = REGISTRY.register("external_storage", () -> IForgeMenuType.create(new BlockEntityContainerFactory<ExternalStorageContainerMenu, ExternalStorageBlockEntity>((windowId, inv, blockEntity) -> new ExternalStorageContainerMenu(blockEntity, inv.player, windowId))));
     public static final RegistryObject<MenuType<FilterContainerMenu>> FILTER = REGISTRY.register("filter", () -> IForgeMenuType.create((windowId, inv, data) -> new FilterContainerMenu(inv.player, inv.getSelected(), windowId)));
     public static final RegistryObject<MenuType<ImporterContainerMenu>> IMPORTER = REGISTRY.register("importer", () -> IForgeMenuType.create(new BlockEntityContainerFactory<ImporterContainerMenu, ImporterBlockEntity>((windowId, inv, blockEntity) -> new ImporterContainerMenu(blockEntity, inv.player, windowId))));
@@ -43,6 +37,5 @@ public final class MSContainerMenus {
     public static final RegistryObject<MenuType<CraftingMonitorContainerMenu>> CRAFTING_MONITOR = REGISTRY.register("crafting_monitor", () -> IForgeMenuType.create(new CraftingMonitorContainerFactory()));
     public static final RegistryObject<MenuType<CraftingMonitorContainerMenu>> WIRELESS_CRAFTING_MONITOR = REGISTRY.register("wireless_crafting_monitor", () -> IForgeMenuType.create(new WirelessCraftingMonitorContainerFactory()));
 
-    private MSContainerMenus() {
-    }
+
 }

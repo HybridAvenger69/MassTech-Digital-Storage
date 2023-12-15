@@ -17,7 +17,6 @@ public class CheckboxWidget extends Checkbox {
 
     private final Consumer<Checkbox> onPress;
     private boolean shadow = true;
-    private boolean selected;
 
     public CheckboxWidget(int x, int y, Component text, boolean isChecked, Consumer<Checkbox> onPress) {
         super(
@@ -59,7 +58,7 @@ public class CheckboxWidget extends Checkbox {
         RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
 
         float textureX = (this.isFocused() ? 10.0F : 0.0F);
-        float textureY = (this.visible ? 10.0F : 0.0F);
+        float textureY = (this.selected ? 10.0F : 0.0F);
 
         int width = 10;
         int height = 10;

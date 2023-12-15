@@ -36,7 +36,6 @@ import com.hybridavenger69.mtstorage.inventory.item.validator.StorageDiskItemVal
 import com.hybridavenger69.mtstorage.inventory.player.PlayerSlot;
 import com.hybridavenger69.mtstorage.item.WirelessGridItem;
 import com.hybridavenger69.mtstorage.item.blockitem.PortableGridBlockItem;
-
 import com.hybridavenger69.mtstorage.network.grid.PortableGridSettingsUpdateMessage;
 import com.hybridavenger69.mtstorage.screen.BaseScreen;
 import com.hybridavenger69.mtstorage.screen.grid.GridScreen;
@@ -57,8 +56,6 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-
 
 public class PortableGrid implements IGrid, IPortableGrid, IStorageDiskContainerContext {
     static final String NBT_ITEM_STORAGE_TRACKER_ID = "ItemStorageTrackerId";
@@ -515,5 +512,3 @@ public class PortableGrid implements IGrid, IPortableGrid, IStorageDiskContainer
 
 
 }
-
-

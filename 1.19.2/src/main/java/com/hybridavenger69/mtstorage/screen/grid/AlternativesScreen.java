@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.screen.grid;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
@@ -165,7 +164,7 @@ public class AlternativesScreen extends BaseScreen<AlternativesContainerMenu> {
 
     @Override
     public void renderBackground(PoseStack poseStack, int x, int y, int mouseX, int mouseY) {
-        bindTexture(HybridIDS.MTStorage_MODID, "gui/alternatives.png");
+        bindTexture(MS.ID, "gui/alternatives.png");
 
         blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
 

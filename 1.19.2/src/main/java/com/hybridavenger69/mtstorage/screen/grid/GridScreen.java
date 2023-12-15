@@ -1,11 +1,9 @@
 package com.hybridavenger69.mtstorage.screen.grid;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSKeyBindings;
 import com.hybridavenger69.mtstorage.api.network.grid.GridType;
 import com.hybridavenger69.mtstorage.api.network.grid.IGrid;
 import com.hybridavenger69.mtstorage.api.network.grid.handler.IItemGridHandler;
@@ -16,7 +14,7 @@ import com.hybridavenger69.mtstorage.blockentity.config.IType;
 import com.hybridavenger69.mtstorage.blockentity.data.BlockEntitySynchronizationManager;
 import com.hybridavenger69.mtstorage.blockentity.grid.GridBlockEntity;
 import com.hybridavenger69.mtstorage.blockentity.grid.portable.IPortableGrid;
-//import com.hybridavenger69.mtstorage.blockentity.grid.portable.PortableGridBlockEntity;
+import com.hybridavenger69.mtstorage.blockentity.grid.portable.PortableGridBlockEntity;
 import com.hybridavenger69.mtstorage.container.GridContainerMenu;
 import com.hybridavenger69.mtstorage.network.grid.*;
 import com.hybridavenger69.mtstorage.screen.BaseScreen;
@@ -123,9 +121,9 @@ public class GridScreen extends BaseScreen<GridContainerMenu> implements IScreen
 
         this.scrollbar = new ScrollbarWidget(this, 174, getTopHeight(), 12, (getVisibleRows() * 18) - 2);
 
-       /* if (grid instanceof GridNetworkNode || grid instanceof PortableGridBlockEntity) {
+        if (grid instanceof GridNetworkNode || grid instanceof PortableGridBlockEntity) {
             addSideButton(new RedstoneModeSideButton(this, grid instanceof GridNetworkNode ? NetworkNodeBlockEntity.REDSTONE_MODE : PortableGridBlockEntity.REDSTONE_MODE));
-        }*/
+        }
 
         int sx = x + 80 + 1;
         int sy = y + 6 + 1;
@@ -228,7 +226,7 @@ public class GridScreen extends BaseScreen<GridContainerMenu> implements IScreen
             updatePatternOffset = false;
         }
 
-        if (isKeyDown(MSKeyBindings.CLEAR_GRID_CRAFTING_MATRIX)) {
+        if (isKeyDown(com.hybridavenger69.mtstorage.MSKeyBindings.CLEAR_GRID_CRAFTING_MATRIX)) {
             MS.NETWORK_HANDLER.sendToServer(new GridClearMessage());
         }
 
@@ -341,13 +339,13 @@ public class GridScreen extends BaseScreen<GridContainerMenu> implements IScreen
         tabs.drawBackground(poseStack, x, y - tabs.getHeight());
 
         if (grid instanceof IPortableGrid) {
-            bindTexture(HybridIDS.MTStorage_MODID, "gui/portable_grid.png");
+            bindTexture(MS.ID, "gui/portable_grid.png");
         } else if (grid.getGridType() == GridType.CRAFTING) {
-            bindTexture(HybridIDS.MTStorage_MODID, "gui/crafting_grid.png");
+            bindTexture(MS.ID, "gui/crafting_grid.png");
         } else if (grid.getGridType() == GridType.PATTERN) {
-            bindTexture(HybridIDS.MTStorage_MODID, "gui/pattern_grid" + (((GridNetworkNode) grid).isProcessingPattern() ? "_processing" : "") + ".png");
+            bindTexture(MS.ID, "gui/pattern_grid" + (((GridNetworkNode) grid).isProcessingPattern() ? "_processing" : "") + ".png");
         } else {
-            bindTexture(HybridIDS.MTStorage_MODID, "gui/grid.png");
+            bindTexture(MS.ID, "gui/grid.png");
         }
 
         int yy = y;

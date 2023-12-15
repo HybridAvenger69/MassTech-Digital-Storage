@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mtstorage:block/quartz_enriched_tech_block"
+    }
+  }
+}

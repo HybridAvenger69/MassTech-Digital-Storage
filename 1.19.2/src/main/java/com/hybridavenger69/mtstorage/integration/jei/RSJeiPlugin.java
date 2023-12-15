@@ -1,8 +1,6 @@
 package com.hybridavenger69.mtstorage.integration.jei;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.recipe.CoverRecipe;
 import com.hybridavenger69.mtstorage.recipe.HollowCoverRecipe;
 import com.hybridavenger69.mtstorage.screen.BaseScreen;
@@ -17,7 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 
 @JeiPlugin
 public class RSJeiPlugin implements IModPlugin {
-    private static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "plugin");
+    private static final ResourceLocation ID = new ResourceLocation(MS.ID, "plugin");
 
     private static IJeiRuntime runtime;
 
@@ -48,7 +46,7 @@ public class RSJeiPlugin implements IModPlugin {
 
     @Override
     public void registerItemSubtypes(ISubtypeRegistration registration) {
-        registration.useNbtForSubtypes(MSItems.COVER.get(), MSItems.HOLLOW_COVER.get());
+        registration.useNbtForSubtypes(com.hybridavenger69.mtstorage.MSItems.COVER.get(), com.hybridavenger69.mtstorage.MSItems.HOLLOW_COVER.get());
     }
 
     @Override

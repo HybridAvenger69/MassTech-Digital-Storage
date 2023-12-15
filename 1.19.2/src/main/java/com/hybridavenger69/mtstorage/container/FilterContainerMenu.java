@@ -55,9 +55,4 @@ public class FilterContainerMenu extends BaseContainerMenu {
     protected int getDisabledSlotNumber() {
         return getPlayer().getInventory().selected;
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

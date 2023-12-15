@@ -39,9 +39,4 @@ public class DiskManipulatorContainerMenu extends BaseContainerMenu {
         transferManager.addTransfer(diskManipulator.getNode().getOutputDisks(), player.getInventory());
         transferManager.addFilterTransfer(player.getInventory(), diskManipulator.getNode().getItemFilters(), diskManipulator.getNode().getFluidFilters(), diskManipulator.getNode()::getType);
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

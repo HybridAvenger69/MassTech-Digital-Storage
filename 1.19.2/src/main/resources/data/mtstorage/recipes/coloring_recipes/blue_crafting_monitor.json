@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mtstorage",
+  "ingredients": [
+    {
+      "tag": "mtstorage:crafting_monitor"
+    },
+    {
+      "tag": "forge:dyes/blue"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:blue_crafting_monitor"
+  }
+}

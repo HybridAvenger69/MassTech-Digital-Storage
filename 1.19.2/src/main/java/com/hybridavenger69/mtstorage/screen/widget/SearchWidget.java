@@ -1,7 +1,6 @@
 package com.hybridavenger69.mtstorage.screen.widget;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.hybridavenger69.mtstorage.MSKeyBindings;
 import com.hybridavenger69.mtstorage.api.network.grid.IGrid;
 import com.hybridavenger69.mtstorage.integration.jei.JeiIntegration;
 import com.hybridavenger69.mtstorage.integration.jei.RSJeiPlugin;
@@ -79,7 +78,7 @@ public class SearchWidget extends EditBox {
             } else if (keyCode == GLFW.GLFW_KEY_ENTER || keyCode == GLFW.GLFW_KEY_KP_ENTER) {
                 saveHistory();
 
-                if (active) {
+                if (canLoseFocus) {
                     setFocused(false);
                 }
 
@@ -87,7 +86,7 @@ public class SearchWidget extends EditBox {
             } else if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
                 saveHistory();
 
-                if (!active) {
+                if (!canLoseFocus) {
                     // If we can't lose focus,
                     // and we press escape,
                     // we unfocus ourselves,
@@ -107,7 +106,7 @@ public class SearchWidget extends EditBox {
             }
         }
 
-        if (BaseScreen.isKeyDown(MSKeyBindings.FOCUS_SEARCH_BAR) && active) {
+        if (BaseScreen.isKeyDown(com.hybridavenger69.mtstorage.MSKeyBindings.FOCUS_SEARCH_BAR) && canLoseFocus) {
             setFocused(!isFocused());
 
             saveHistory();

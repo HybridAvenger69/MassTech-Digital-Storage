@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.node.INetworkNode;
 import com.hybridavenger69.mtstorage.api.util.Action;
@@ -26,7 +25,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 
 public class InterfaceNetworkNode extends NetworkNode implements IComparable {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "interface");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "interface");
 
     private static final String NBT_COMPARE = "Compare";
 

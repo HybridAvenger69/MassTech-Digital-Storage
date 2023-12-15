@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_security_manager",
+    "mtstorage:orange_security_manager",
+    "mtstorage:magenta_security_manager",
+    "mtstorage:security_manager",
+    "mtstorage:yellow_security_manager",
+    "mtstorage:lime_security_manager",
+    "mtstorage:pink_security_manager",
+    "mtstorage:gray_security_manager",
+    "mtstorage:light_gray_security_manager",
+    "mtstorage:cyan_security_manager",
+    "mtstorage:purple_security_manager",
+    "mtstorage:blue_security_manager",
+    "mtstorage:brown_security_manager",
+    "mtstorage:green_security_manager",
+    "mtstorage:red_security_manager",
+    "mtstorage:black_security_manager"
+  ]
+}

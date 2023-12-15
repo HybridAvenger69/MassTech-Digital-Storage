@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.INetwork;
 import com.hybridavenger69.mtstorage.api.network.node.ICoverable;
@@ -43,7 +42,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ExternalStorageNetworkNode extends NetworkNode implements IStorageProvider, IStorageScreen, IComparable, IWhitelistBlacklist, IPrioritizable, IType, IAccessType, IExternalStorageContext, ICoverable {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "external_storage");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "external_storage");
 
     private static final Logger LOGGER = LogManager.getLogger(ExternalStorageNetworkNode.class);
 

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_crafting_grid",
+    "mtstorage:orange_crafting_grid",
+    "mtstorage:magenta_crafting_grid",
+    "mtstorage:crafting_grid",
+    "mtstorage:yellow_crafting_grid",
+    "mtstorage:lime_crafting_grid",
+    "mtstorage:pink_crafting_grid",
+    "mtstorage:gray_crafting_grid",
+    "mtstorage:light_gray_crafting_grid",
+    "mtstorage:cyan_crafting_grid",
+    "mtstorage:purple_crafting_grid",
+    "mtstorage:blue_crafting_grid",
+    "mtstorage:brown_crafting_grid",
+    "mtstorage:green_crafting_grid",
+    "mtstorage:red_crafting_grid",
+    "mtstorage:black_crafting_grid"
+  ]
+}

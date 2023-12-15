@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.IWirelessTransmitter;
 import com.hybridavenger69.mtstorage.inventory.item.BaseItemHandler;
@@ -17,7 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.items.IItemHandler;
 
 public class WirelessTransmitterNetworkNode extends NetworkNode implements IWirelessTransmitter {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "wireless_transmitter");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "wireless_transmitter");
 
     private final UpgradeItemHandler upgrades = (UpgradeItemHandler) new UpgradeItemHandler(4, UpgradeItem.Type.RANGE).addListener(new NetworkNodeInventoryListener(this));
 

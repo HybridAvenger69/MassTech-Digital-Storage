@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_pattern_grid",
+    "mtstorage:orange_pattern_grid",
+    "mtstorage:magenta_pattern_grid",
+    "mtstorage:pattern_grid",
+    "mtstorage:yellow_pattern_grid",
+    "mtstorage:lime_pattern_grid",
+    "mtstorage:pink_pattern_grid",
+    "mtstorage:gray_pattern_grid",
+    "mtstorage:light_gray_pattern_grid",
+    "mtstorage:cyan_pattern_grid",
+    "mtstorage:purple_pattern_grid",
+    "mtstorage:blue_pattern_grid",
+    "mtstorage:brown_pattern_grid",
+    "mtstorage:green_pattern_grid",
+    "mtstorage:red_pattern_grid",
+    "mtstorage:black_pattern_grid"
+  ]
+}

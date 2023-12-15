@@ -392,6 +392,7 @@ public class ServerConfig {
             twoZeroFourtyEightK = builder.comment("The energy used by the 2048k Storage Block").defineInRange("twoZeroFourtyEightk", 10, 0, Integer.MAX_VALUE);
             creativeUsage = builder.comment("The energy used by the Creative Storage Block").defineInRange("creativeUsage", 10, 0, Integer.MAX_VALUE);
 
+
             builder.pop();
         }
 
@@ -411,19 +412,20 @@ public class ServerConfig {
             return sixtyFourKUsage.get();
         }
 
-        public int getOneTwentyEightKUsage() {return  oneTwentyEightKUsage.get(); }
-
-        public int getTwoFiftySixk() {return  twoFiftySixKUsage.get(); }
-
-        public int getFiveTwelvek() {return  fiveTwelveKUsage.get(); }
-
-        public int getOneZeroTwentyFourk() {return  oneZeroTwentyFourKUsage.get(); }
-
-        public int getTwoZeroFourtyEightKUsage() {return  twoZeroFourtyEightK.get(); }
-
         public int getCreativeUsage() {
             return creativeUsage.get();
         }
+
+        public int getOneTwentyEightKUsage() {return  oneTwentyEightKUsage.get(); }
+
+        public int getTwoFiftySixkusage() {return  twoFiftySixKUsage.get(); }
+
+        public int getFiveTwelvekUsage() {return  fiveTwelveKUsage.get(); }
+
+        public int getOneZeroTwentyFourkUsage() {return  oneZeroTwentyFourKUsage.get(); }
+
+        public int getTwoZeroFourtyEightKUsage() {return  twoZeroFourtyEightK.get(); }
+
     }
 
     public class FluidStorageBlock {

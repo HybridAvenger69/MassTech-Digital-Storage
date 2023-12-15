@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.screen.widget.sidebutton;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
@@ -40,7 +39,7 @@ public abstract class SideButton extends Button {
 
         isHovered = RenderUtils.inBounds(x, y, width, height, mouseX, mouseY);
 
-        screen.bindTexture(HybridIDS.MTStorage_MODID, "icons.png");
+        screen.bindTexture(MS.ID, "icons.png");
         screen.blit(poseStack, x, y, 238, isHovered ? 35 : 16, WIDTH, HEIGHT);
 
         renderButtonIcon(poseStack, x + 1, y + 1);

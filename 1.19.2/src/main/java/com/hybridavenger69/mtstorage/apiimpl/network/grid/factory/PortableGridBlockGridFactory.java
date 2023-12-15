@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.grid.factory;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.grid.GridFactoryType;
 import com.hybridavenger69.mtstorage.api.network.grid.IGrid;
@@ -17,7 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import javax.annotation.Nullable;
 
 public class PortableGridBlockGridFactory implements IGridFactory {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "portable_grid_block");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "portable_grid_block");
 
     @Override
     @Nullable
@@ -48,5 +47,3 @@ public class PortableGridBlockGridFactory implements IGridFactory {
         return GridFactoryType.BLOCK;
     }
 }
-
-

@@ -222,6 +222,4 @@ public abstract class BaseContainerMenu extends AbstractContainerMenu {
             listener.onClosed();
         }
     }
-
-    public abstract void updatePatternSlotPositions(int patternScrollOffset);
 }

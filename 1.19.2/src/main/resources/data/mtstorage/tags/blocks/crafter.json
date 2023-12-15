@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_crafter",
+    "mtstorage:orange_crafter",
+    "mtstorage:magenta_crafter",
+    "mtstorage:crafter",
+    "mtstorage:yellow_crafter",
+    "mtstorage:lime_crafter",
+    "mtstorage:pink_crafter",
+    "mtstorage:gray_crafter",
+    "mtstorage:light_gray_crafter",
+    "mtstorage:cyan_crafter",
+    "mtstorage:purple_crafter",
+    "mtstorage:blue_crafter",
+    "mtstorage:brown_crafter",
+    "mtstorage:green_crafter",
+    "mtstorage:red_crafter",
+    "mtstorage:black_crafter"
+  ]
+}

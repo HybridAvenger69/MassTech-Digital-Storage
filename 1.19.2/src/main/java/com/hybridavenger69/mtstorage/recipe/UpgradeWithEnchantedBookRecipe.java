@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.recipe;
 
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.item.UpgradeItem;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -23,15 +22,15 @@ public class UpgradeWithEnchantedBookRecipe extends ShapedRecipe {
 
     public UpgradeWithEnchantedBookRecipe(ResourceLocation recipeId, Enchantment enchantment, int enchantmentLevel, ItemStack result) {
         super(recipeId, "", 3, 3, NonNullList.of(Ingredient.EMPTY,
-            Ingredient.of(new ItemStack(MSItems.QUARTZ_ENRICHED_TECH.get())),
+            Ingredient.of(new ItemStack(com.hybridavenger69.mtstorage.MSItems.QUARTZ_ENRICHED_TECH.get())),
             Ingredient.of(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(enchantment, enchantmentLevel))),
-            Ingredient.of(new ItemStack(MSItems.QUARTZ_ENRICHED_TECH.get())),
+            Ingredient.of(new ItemStack(com.hybridavenger69.mtstorage.MSItems.QUARTZ_ENRICHED_TECH.get())),
             Ingredient.of(new ItemStack(Blocks.BOOKSHELF)),
-            Ingredient.of(new ItemStack(MSItems.UPGRADE_ITEMS.get(UpgradeItem.Type.NORMAL).get())),
+            Ingredient.of(new ItemStack(com.hybridavenger69.mtstorage.MSItems.UPGRADE_ITEMS.get(UpgradeItem.Type.NORMAL).get())),
             Ingredient.of(new ItemStack(Blocks.BOOKSHELF)),
-            Ingredient.of(new ItemStack(MSItems.QUARTZ_ENRICHED_TECH.get())),
-            Ingredient.of(new ItemStack(MSItems.QUARTZ_ENRICHED_TECH.get())),
-            Ingredient.of(new ItemStack(MSItems.QUARTZ_ENRICHED_TECH.get()))
+            Ingredient.of(new ItemStack(com.hybridavenger69.mtstorage.MSItems.QUARTZ_ENRICHED_TECH.get())),
+            Ingredient.of(new ItemStack(com.hybridavenger69.mtstorage.MSItems.QUARTZ_ENRICHED_TECH.get())),
+            Ingredient.of(new ItemStack(com.hybridavenger69.mtstorage.MSItems.QUARTZ_ENRICHED_TECH.get()))
         ), result);
 
         this.enchant = new EnchantmentInstance(enchantment, enchantmentLevel);

@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.autocrafting.preview;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.autocrafting.preview.ICraftingPreviewElement;
@@ -16,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.fluids.FluidStack;
 
 public class FluidCraftingPreviewElement implements ICraftingPreviewElement {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "fluid");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "fluid");
 
     private final FluidStack stack;
     private int available;

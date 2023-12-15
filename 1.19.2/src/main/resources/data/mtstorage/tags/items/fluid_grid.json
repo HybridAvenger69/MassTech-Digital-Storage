@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_fluid_grid",
+    "mtstorage:orange_fluid_grid",
+    "mtstorage:magenta_fluid_grid",
+    "mtstorage:fluid_grid",
+    "mtstorage:yellow_fluid_grid",
+    "mtstorage:lime_fluid_grid",
+    "mtstorage:pink_fluid_grid",
+    "mtstorage:gray_fluid_grid",
+    "mtstorage:light_gray_fluid_grid",
+    "mtstorage:cyan_fluid_grid",
+    "mtstorage:purple_fluid_grid",
+    "mtstorage:blue_fluid_grid",
+    "mtstorage:brown_fluid_grid",
+    "mtstorage:green_fluid_grid",
+    "mtstorage:red_fluid_grid",
+    "mtstorage:black_fluid_grid"
+  ]
+}

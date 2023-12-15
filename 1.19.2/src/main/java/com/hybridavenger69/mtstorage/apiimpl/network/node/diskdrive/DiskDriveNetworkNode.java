@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node.diskdrive;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.INetwork;
 import com.hybridavenger69.mtstorage.api.storage.AccessType;
@@ -40,7 +39,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 public class DiskDriveNetworkNode extends NetworkNode implements IStorageProvider, IComparable, IWhitelistBlacklist, IPrioritizable, IType, IAccessType, IStorageDiskContainerContext {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "disk_drive");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "disk_drive");
 
     private static final String NBT_PRIORITY = "Priority";
     private static final String NBT_COMPARE = "Compare";

@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.setup;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.*;
 import com.hybridavenger69.mtstorage.apiimpl.API;
 import com.hybridavenger69.mtstorage.apiimpl.network.node.cover.CoverType;
@@ -48,10 +47,10 @@ import java.util.Arrays;
 import java.util.function.BiConsumer;
 
 public final class ClientSetup {
-    private static final ResourceLocation DISK_RESOURCE = new ResourceLocation(HybridIDS.MTStorage_MODID + ":block/disks/disk");
-    private static final ResourceLocation DISK_NEAR_CAPACITY_RESOURCE = new ResourceLocation(HybridIDS.MTStorage_MODID + ":block/disks/disk_near_capacity");
-    private static final ResourceLocation DISK_FULL_RESOURCE = new ResourceLocation(HybridIDS.MTStorage_MODID + ":block/disks/disk_full");
-    private static final ResourceLocation DISK_DISCONNECTED_RESOURCE = new ResourceLocation(HybridIDS.MTStorage_MODID + ":block/disks/disk_disconnected");
+    private static final ResourceLocation DISK_RESOURCE = new ResourceLocation(MS.ID + ":block/disks/disk");
+    private static final ResourceLocation DISK_NEAR_CAPACITY_RESOURCE = new ResourceLocation(MS.ID + ":block/disks/disk_near_capacity");
+    private static final ResourceLocation DISK_FULL_RESOURCE = new ResourceLocation(MS.ID + ":block/disks/disk_full");
+    private static final ResourceLocation DISK_DISCONNECTED_RESOURCE = new ResourceLocation(MS.ID + ":block/disks/disk_disconnected");
 
     private static final ResourceLocation CONNECTED = new ResourceLocation("connected");
 
@@ -62,13 +61,13 @@ public final class ClientSetup {
     }
 
     private static ResourceLocation getColoredModel(DyeColor color, String path) {
-        return new ResourceLocation(HybridIDS.MTStorage_MODID, path + color);
+        return new ResourceLocation(MS.ID, path + color);
     }
 
     private static void forEachColorApply(String name, BiConsumer<ResourceLocation, DyeColor> consumer) {
         for (DyeColor color : DyeColor.values()) {
             String prefix = color == ColorMap.DEFAULT_COLOR ? "" : color + "_";
-            consumer.accept(new ResourceLocation(HybridIDS.MTStorage_MODID, prefix + name), color);
+            consumer.accept(new ResourceLocation(MS.ID, prefix + name), color);
         }
     }
 
@@ -163,13 +162,13 @@ public final class ClientSetup {
     // TODO: we have probably too much emissivity (when disconnected)
 
     private static void registerBakedModelOverrides() {
-        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(HybridIDS.MTStorage_MODID, "cable"), (base, registry) -> new CableCoverBakedModel(base));
-        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(HybridIDS.MTStorage_MODID, "exporter"), (base, registry) -> new CableCoverBakedModel(base));
-        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(HybridIDS.MTStorage_MODID, "importer"), (base, registry) -> new CableCoverBakedModel(base));
-        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(HybridIDS.MTStorage_MODID, "external_storage"), (base, registry) -> new CableCoverBakedModel(base));
-        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(HybridIDS.MTStorage_MODID, "cover"), (base, registry) -> new CableCoverItemBakedModel(ItemStack.EMPTY, CoverType.NORMAL));
-        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(HybridIDS.MTStorage_MODID, "hollow_cover"), (base, registry) -> new CableCoverItemBakedModel(ItemStack.EMPTY, CoverType.HOLLOW));
-        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(HybridIDS.MTStorage_MODID, "pattern"), (base, registry) -> new PatternBakedModel(base));
+        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(MS.ID, "cable"), (base, registry) -> new CableCoverBakedModel(base));
+        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(MS.ID, "exporter"), (base, registry) -> new CableCoverBakedModel(base));
+        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(MS.ID, "importer"), (base, registry) -> new CableCoverBakedModel(base));
+        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(MS.ID, "external_storage"), (base, registry) -> new CableCoverBakedModel(base));
+        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(MS.ID, "cover"), (base, registry) -> new CableCoverItemBakedModel(ItemStack.EMPTY, CoverType.NORMAL));
+        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(MS.ID, "hollow_cover"), (base, registry) -> new CableCoverItemBakedModel(ItemStack.EMPTY, CoverType.HOLLOW));
+        BAKED_MODEL_OVERRIDE_REGISTRY.add(new ResourceLocation(MS.ID, "pattern"), (base, registry) -> new PatternBakedModel(base));
     }
 
     @SubscribeEvent
@@ -199,10 +198,10 @@ public final class ClientSetup {
         e.register(DISK_FULL_RESOURCE);
         e.register(DISK_DISCONNECTED_RESOURCE);
 
-        e.register(new ResourceLocation(HybridIDS.MTStorage_MODID + ":block/disk_manipulator/disconnected"));
+        e.register(new ResourceLocation(MS.ID + ":block/disk_manipulator/disconnected"));
 
         for (DyeColor color : DyeColor.values()) {
-            e.register(new ResourceLocation(HybridIDS.MTStorage_MODID + ":block/disk_manipulator/" + color));
+            e.register(new ResourceLocation(MS.ID + ":block/disk_manipulator/" + color));
         }
 
     }
@@ -221,7 +220,7 @@ public final class ClientSetup {
     @SubscribeEvent
     public static void onTextureStitch(TextureStitchEvent.Pre event) {
         if (event.getAtlas().location().equals(InventoryMenu.BLOCK_ATLAS)) {
-            event.addSprite(new ResourceLocation(HybridIDS.MTStorage_MODID, "block/cable_part_border"));
+            event.addSprite(new ResourceLocation(MS.ID, "block/cable_part_border"));
         }
     }
 

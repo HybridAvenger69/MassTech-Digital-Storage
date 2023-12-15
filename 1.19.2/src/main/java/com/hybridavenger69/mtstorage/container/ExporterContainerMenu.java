@@ -9,7 +9,7 @@ import com.hybridavenger69.mtstorage.blockentity.config.IType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.items.SlotItemHandler;
 
-public abstract class ExporterContainerMenu extends BaseContainerMenu {
+public class ExporterContainerMenu extends BaseContainerMenu {
     private final ExporterBlockEntity exporter;
     private boolean hasRegulatorMode;
 
@@ -40,7 +40,7 @@ public abstract class ExporterContainerMenu extends BaseContainerMenu {
 
     public void initSlots() {
         this.slots.clear();
-        this.slots.clear();
+        this.lastSlots.clear();
 
         this.transferManager.clearTransfers();
 

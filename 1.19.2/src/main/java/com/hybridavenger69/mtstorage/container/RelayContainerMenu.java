@@ -10,9 +10,4 @@ public class RelayContainerMenu extends BaseContainerMenu {
 
         addPlayerInventory(8, 50);
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

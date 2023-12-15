@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.grid.IGrid;
 import com.hybridavenger69.mtstorage.block.CrafterManagerBlock;
@@ -13,7 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class CrafterManagerNetworkNode extends NetworkNode {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "crafter_manager");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "crafter_manager");
 
     private static final String NBT_SIZE = "Size";
     private static final String NBT_SEARCH_BOX_MODE = "SearchBoxMode";

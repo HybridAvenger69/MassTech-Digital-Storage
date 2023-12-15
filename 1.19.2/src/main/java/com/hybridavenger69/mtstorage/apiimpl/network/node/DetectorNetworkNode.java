@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.INetwork;
 import com.hybridavenger69.mtstorage.api.util.IComparer;
@@ -25,7 +24,7 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 import javax.annotation.Nullable;
 
 public class DetectorNetworkNode extends NetworkNode implements IComparable, IType {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "detector");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "detector");
     public static final int MODE_UNDER = 0;
     public static final int MODE_EQUAL = 1;
     public static final int MODE_ABOVE = 2;

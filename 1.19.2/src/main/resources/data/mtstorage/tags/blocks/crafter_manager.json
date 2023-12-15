@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_crafter_manager",
+    "mtstorage:orange_crafter_manager",
+    "mtstorage:magenta_crafter_manager",
+    "mtstorage:crafter_manager",
+    "mtstorage:yellow_crafter_manager",
+    "mtstorage:lime_crafter_manager",
+    "mtstorage:pink_crafter_manager",
+    "mtstorage:gray_crafter_manager",
+    "mtstorage:light_gray_crafter_manager",
+    "mtstorage:cyan_crafter_manager",
+    "mtstorage:purple_crafter_manager",
+    "mtstorage:blue_crafter_manager",
+    "mtstorage:brown_crafter_manager",
+    "mtstorage:green_crafter_manager",
+    "mtstorage:red_crafter_manager",
+    "mtstorage:black_crafter_manager"
+  ]
+}

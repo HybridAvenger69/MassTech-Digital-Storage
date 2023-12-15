@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.integration.jei;
 
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.apiimpl.network.node.cover.CoverManager;
 import com.hybridavenger69.mtstorage.item.CoverItem;
 import com.hybridavenger69.mtstorage.recipe.HollowCoverRecipe;
@@ -40,10 +39,10 @@ public class HollowCoverCraftingCategoryExtension implements ICraftingCategoryEx
             block.fillItemCategory(CreativeModeTab.TAB_SEARCH, subBlocks);
             for (ItemStack subBlock : subBlocks) {
                 if (CoverManager.isValidCover(subBlock)) {
-                    ItemStack fullCover = new ItemStack(MSItems.COVER.get());
+                    ItemStack fullCover = new ItemStack(com.hybridavenger69.mtstorage.MSItems.COVER.get());
                     CoverItem.setItem(fullCover, subBlock);
                     input.add(fullCover);
-                    ItemStack hollowCover = new ItemStack(MSItems.HOLLOW_COVER.get());
+                    ItemStack hollowCover = new ItemStack(com.hybridavenger69.mtstorage.MSItems.HOLLOW_COVER.get());
                     CoverItem.setItem(hollowCover, subBlock);
                     output.add(hollowCover);
                 }

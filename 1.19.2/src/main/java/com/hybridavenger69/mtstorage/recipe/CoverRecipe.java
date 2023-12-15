@@ -2,7 +2,6 @@ package com.hybridavenger69.mtstorage.recipe;
 
 
 import com.google.common.collect.Lists;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.apiimpl.network.node.cover.CoverManager;
 import com.hybridavenger69.mtstorage.item.CoverItem;
 import net.minecraft.resources.ResourceLocation;
@@ -43,13 +42,13 @@ public class CoverRecipe extends CustomRecipe {
 
     public static ItemStack getResult(ItemStack first, ItemStack second) {
         if (first.is(Tags.Items.NUGGETS_IRON)) {
-            ItemStack stack = new ItemStack(MSItems.COVER.get());
+            ItemStack stack = new ItemStack(com.hybridavenger69.mtstorage.MSItems.COVER.get());
             CoverItem.setItem(stack, second);
             stack.setCount(6);
             return stack;
         }
         if (second.is(Tags.Items.NUGGETS_IRON)) {
-            ItemStack stack = new ItemStack(MSItems.COVER.get());
+            ItemStack stack = new ItemStack(com.hybridavenger69.mtstorage.MSItems.COVER.get());
             CoverItem.setItem(stack, first);
             stack.setCount(6);
             return stack;

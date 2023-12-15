@@ -121,12 +121,7 @@ public class ExporterBlock extends CableBlock {
                 (ServerPlayer) player,
                 new BlockEntityMenuProvider<ExporterBlockEntity>(
                     Component.translatable("gui.mtstorage.exporter"),
-                    (blockEntity, windowId, inventory, p) -> new ExporterContainerMenu(blockEntity, player, windowId) {
-                        @Override
-                        public void updatePatternSlotPositions(int patternScrollOffset) {
-
-                        }
-                    },
+                    (blockEntity, windowId, inventory, p) -> new ExporterContainerMenu(blockEntity, player, windowId),
                     pos
                 ),
                 pos

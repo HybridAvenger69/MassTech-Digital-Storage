@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node.storage;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.INetwork;
 import com.hybridavenger69.mtstorage.api.storage.AccessType;
@@ -42,11 +41,11 @@ import java.util.List;
 import java.util.UUID;
 
 public class FluidStorageNetworkNode extends NetworkNode implements IStorageScreen, IStorageProvider, IComparable, IWhitelistBlacklist, IPrioritizable, IAccessType, IStorageDiskContainerContext {
-    public static final ResourceLocation SIXTY_FOUR_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "64k_fluid_storage_block");
-    public static final ResourceLocation TWO_HUNDRED_FIFTY_SIX_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "256k_fluid_storage_block");
-    public static final ResourceLocation THOUSAND_TWENTY_FOUR_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "1024k_fluid_storage_block");
-    public static final ResourceLocation FOUR_THOUSAND_NINETY_SIX_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "4096k_fluid_storage_block");
-    public static final ResourceLocation CREATIVE_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "creative_fluid_storage_block");
+    public static final ResourceLocation SIXTY_FOUR_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "64k_fluid_storage_block");
+    public static final ResourceLocation TWO_HUNDRED_FIFTY_SIX_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "256k_fluid_storage_block");
+    public static final ResourceLocation THOUSAND_TWENTY_FOUR_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "1024k_fluid_storage_block");
+    public static final ResourceLocation FOUR_THOUSAND_NINETY_SIX_K_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "4096k_fluid_storage_block");
+    public static final ResourceLocation CREATIVE_FLUID_STORAGE_BLOCK_ID = new ResourceLocation(MS.ID, "creative_fluid_storage_block");
     public static final String NBT_ID = "Id";
     private static final Logger LOGGER = LogManager.getLogger(FluidStorageNetworkNode.class);
     private static final String NBT_PRIORITY = "Priority";

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mtstorage:orange_grid"
+    },
+    {
+      "item": "mtstorage:advanced_processor"
+    },
+    {
+      "item": "mtstorage:pattern"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:orange_pattern_grid"
+  }
+}

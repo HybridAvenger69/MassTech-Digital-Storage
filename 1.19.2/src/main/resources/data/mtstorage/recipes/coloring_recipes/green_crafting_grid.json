@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mtstorage",
+  "ingredients": [
+    {
+      "tag": "mtstorage:crafting_grid"
+    },
+    {
+      "tag": "forge:dyes/green"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:green_crafting_grid"
+  }
+}

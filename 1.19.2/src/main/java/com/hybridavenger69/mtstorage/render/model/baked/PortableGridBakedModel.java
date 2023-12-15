@@ -152,5 +152,3 @@ public class PortableGridBakedModel extends BakedModelWrapper<BakedModel> {
         }
     }
 }
-
-

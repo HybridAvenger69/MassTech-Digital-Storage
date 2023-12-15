@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_relay",
+    "mtstorage:orange_relay",
+    "mtstorage:magenta_relay",
+    "mtstorage:relay",
+    "mtstorage:yellow_relay",
+    "mtstorage:lime_relay",
+    "mtstorage:pink_relay",
+    "mtstorage:gray_relay",
+    "mtstorage:light_gray_relay",
+    "mtstorage:cyan_relay",
+    "mtstorage:purple_relay",
+    "mtstorage:blue_relay",
+    "mtstorage:brown_relay",
+    "mtstorage:green_relay",
+    "mtstorage:red_relay",
+    "mtstorage:black_relay"
+  ]
+}

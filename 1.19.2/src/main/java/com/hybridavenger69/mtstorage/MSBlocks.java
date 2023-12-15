@@ -1,12 +1,10 @@
 package com.hybridavenger69.mtstorage;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.api.network.NetworkType;
 import com.hybridavenger69.mtstorage.api.network.grid.GridType;
 import com.hybridavenger69.mtstorage.apiimpl.storage.FluidStorageType;
 import com.hybridavenger69.mtstorage.apiimpl.storage.ItemStorageType;
 import com.hybridavenger69.mtstorage.block.*;
-//import com.hybridavenger69.mtstorage.item.blockitem.PortableGridBlockItem;
 import com.hybridavenger69.mtstorage.item.blockitem.PortableGridBlockItem;
 import com.hybridavenger69.mtstorage.util.ColorMap;
 import net.minecraft.tags.TagKey;
@@ -22,12 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.hybridavenger69.mtstorage.MSItems.*;
-
 public final class MSBlocks {
     public static final RegistryObject<ImporterBlock> IMPORTER;
     public static final RegistryObject<ExporterBlock> EXPORTER;
-    public static final RegistryObject<QuartzEnrichedIronBlock> QUARTZ_ENRICHED_IRON;
+    public static final RegistryObject<QuartzEnrichedTechBlock> QUARTZ_ENRICHED_TECH;
     public static final RegistryObject<MachineCasingBlock> MACHINE_CASING;
     public static final RegistryObject<CableBlock> CABLE;
     public static final RegistryObject<DiskDriveBlock> DISK_DRIVE;
@@ -43,7 +39,7 @@ public final class MSBlocks {
     public static final RegistryObject<PortableGridBlock> PORTABLE_GRID;
     public static final RegistryObject<PortableGridBlock> CREATIVE_PORTABLE_GRID;
     public static final List<RegistryObject<? extends Block>> COLORED_BLOCKS = new ArrayList<>();
-    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, HybridIDS.MTStorage_MODID);
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MS.ID);
     public static final ColorMap<CrafterBlock> CRAFTER = new ColorMap<>(BLOCKS);
     public static final ColorMap<RelayBlock> RELAY = new ColorMap<>(BLOCKS);
     public static final ColorMap<NetworkTransmitterBlock> NETWORK_TRANSMITTER = new ColorMap<>(BLOCKS);
@@ -63,7 +59,7 @@ public final class MSBlocks {
     private static final String GRID_SUFFIX = "_grid";
 
     static {
-        QUARTZ_ENRICHED_IRON = BLOCKS.register("quartz_enriched_iron_block", QuartzEnrichedIronBlock::new);
+        QUARTZ_ENRICHED_TECH = BLOCKS.register("quartz_enriched_tech_block", QuartzEnrichedTechBlock::new);
         MACHINE_CASING = BLOCKS.register("machine_casing", MachineCasingBlock::new);
         CABLE = BLOCKS.register("cable", CableBlock::new);
         DISK_DRIVE = BLOCKS.register("disk_drive", DiskDriveBlock::new);
@@ -104,8 +100,7 @@ public final class MSBlocks {
         DETECTOR.registerBlocks("detector", DetectorBlock::new);
     }
 
-    private MSBlocks() {
-    }
+
 
     public static void register() {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());

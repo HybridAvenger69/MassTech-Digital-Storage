@@ -17,9 +17,4 @@ public class FluidStorageContainerMenu extends BaseContainerMenu {
 
         transferManager.addFluidFilterTransfer(player.getInventory(), fluidStorage.getNode().getFilters());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

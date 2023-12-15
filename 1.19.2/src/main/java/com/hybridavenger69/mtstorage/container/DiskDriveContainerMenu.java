@@ -32,9 +32,4 @@ public class DiskDriveContainerMenu extends BaseContainerMenu {
         transferManager.addBiTransfer(player.getInventory(), diskDrive.getNode().getDisks());
         transferManager.addFilterTransfer(player.getInventory(), diskDrive.getNode().getItemFilters(), diskDrive.getNode().getFluidFilters(), diskDrive.getNode()::getType);
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

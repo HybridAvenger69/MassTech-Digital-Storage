@@ -29,9 +29,4 @@ public class DestructorContainerMenu extends BaseContainerMenu {
         transferManager.addBiTransfer(player.getInventory(), destructor.getNode().getUpgrades());
         transferManager.addFilterTransfer(player.getInventory(), destructor.getNode().getItemFilters(), destructor.getNode().getFluidFilters(), destructor.getNode()::getType);
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

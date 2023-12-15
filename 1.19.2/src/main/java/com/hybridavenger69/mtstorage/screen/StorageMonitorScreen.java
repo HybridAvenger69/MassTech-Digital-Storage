@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.screen;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.container.StorageMonitorContainerMenu;
@@ -29,7 +28,7 @@ public class StorageMonitorScreen extends BaseScreen<StorageMonitorContainerMenu
 
     @Override
     public void renderBackground(PoseStack poseStack, int x, int y, int mouseX, int mouseY) {
-        bindTexture(HybridIDS.MTStorage_MODID, "gui/storage_monitor.png");
+        bindTexture(MS.ID, "gui/storage_monitor.png");
 
         blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
     }

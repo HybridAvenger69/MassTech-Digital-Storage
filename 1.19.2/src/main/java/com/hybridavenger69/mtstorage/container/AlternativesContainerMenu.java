@@ -6,9 +6,4 @@ public class AlternativesContainerMenu extends BaseContainerMenu {
     public AlternativesContainerMenu(Player player) {
         super(null, null, player, 0);
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

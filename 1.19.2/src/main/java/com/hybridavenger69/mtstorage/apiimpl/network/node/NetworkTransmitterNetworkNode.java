@@ -1,8 +1,6 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.network.INetworkNodeVisitor;
 import com.hybridavenger69.mtstorage.api.util.Action;
 import com.hybridavenger69.mtstorage.inventory.item.BaseItemHandler;
@@ -22,11 +20,11 @@ import net.minecraftforge.items.IItemHandler;
 import javax.annotation.Nullable;
 
 public class NetworkTransmitterNetworkNode extends NetworkNode {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "network_transmitter");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "network_transmitter");
     private BlockPos receiver;
     private ResourceKey<Level> receiverDimension;
     private final BaseItemHandler networkCard = new BaseItemHandler(1)
-        .addValidator(new ItemValidator(MSItems.NETWORK_CARD.get()))
+        .addValidator(new ItemValidator(com.hybridavenger69.mtstorage.MSItems.NETWORK_CARD.get()))
         .addListener(new NetworkNodeInventoryListener(this))
         .addListener((handler, slot, reading) -> {
             ItemStack card = handler.getStackInSlot(slot);

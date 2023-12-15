@@ -1,7 +1,6 @@
 package com.hybridavenger69.mtstorage.item;
 
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPattern;
 import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPatternContainer;
 import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPatternProvider;
@@ -282,7 +281,7 @@ public class PatternItem extends Item implements ICraftingPatternProvider {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (!level.isClientSide && player.isCrouching()) {
-            return new InteractionResultHolder<>(InteractionResult.SUCCESS, new ItemStack(MSItems.PATTERN.get(), player.getItemInHand(hand).getCount()));
+            return new InteractionResultHolder<>(InteractionResult.SUCCESS, new ItemStack(com.hybridavenger69.mtstorage.MSItems.PATTERN.get(), player.getItemInHand(hand).getCount()));
         }
 
         return new InteractionResultHolder<>(InteractionResult.PASS, player.getItemInHand(hand));

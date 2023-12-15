@@ -16,7 +16,7 @@
       "item": "mtstorage:fluid_grid"
     },
     "C": {
-      "tag": "mtstorage:controller"
+      "item": "mtstorage:controller"
     }
   },
   "result": {

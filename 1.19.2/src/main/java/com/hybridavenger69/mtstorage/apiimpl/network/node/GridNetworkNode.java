@@ -1,8 +1,6 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.network.grid.*;
 import com.hybridavenger69.mtstorage.api.network.grid.handler.IFluidGridHandler;
 import com.hybridavenger69.mtstorage.api.network.grid.handler.IItemGridHandler;
@@ -61,10 +59,10 @@ import java.util.List;
 import java.util.Set;
 
 public class GridNetworkNode extends NetworkNode implements INetworkAwareGrid, IType {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "grid");
-    public static final ResourceLocation CRAFTING_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "crafting_grid");
-    public static final ResourceLocation PATTERN_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "pattern_grid");
-    public static final ResourceLocation FLUID_ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "fluid_grid");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "grid");
+    public static final ResourceLocation CRAFTING_ID = new ResourceLocation(MS.ID, "crafting_grid");
+    public static final ResourceLocation PATTERN_ID = new ResourceLocation(MS.ID, "pattern_grid");
+    public static final ResourceLocation FLUID_ID = new ResourceLocation(MS.ID, "fluid_grid");
 
     public static final String NBT_VIEW_TYPE = "ViewType";
     public static final String NBT_SORTING_DIRECTION = "SortingDirection";
@@ -144,7 +142,7 @@ public class GridNetworkNode extends NetworkNode implements INetworkAwareGrid, I
             return stack;
         }
     }
-        .addValidator(new ItemValidator(MSItems.PATTERN.get()))
+        .addValidator(new ItemValidator(com.hybridavenger69.mtstorage.MSItems.PATTERN.get()))
         .addListener(new NetworkNodeInventoryListener(this))
         .addListener(((handler, slot, reading) -> {
             ItemStack pattern = handler.getStackInSlot(slot);
@@ -451,7 +449,7 @@ public class GridNetworkNode extends NetworkNode implements INetworkAwareGrid, I
                 patterns.extractItem(0, 1, false);
             }
 
-            ItemStack pattern = new ItemStack(MSItems.PATTERN.get());
+            ItemStack pattern = new ItemStack(com.hybridavenger69.mtstorage.MSItems.PATTERN.get());
 
             PatternItem.setToCurrentVersion(pattern);
             PatternItem.setProcessing(pattern, processingPattern);

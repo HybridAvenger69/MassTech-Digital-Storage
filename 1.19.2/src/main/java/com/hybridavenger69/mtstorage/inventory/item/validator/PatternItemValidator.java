@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.inventory.item.validator;
 
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPatternProvider;
 import com.hybridavenger69.mtstorage.item.PatternItem;
 import net.minecraft.world.item.ItemStack;
@@ -17,7 +16,7 @@ public class PatternItemValidator implements Predicate<ItemStack> {
 
     @Override
     public boolean test(ItemStack stack) {
-        if (stack.getItem() == MSItems.PATTERN.get()) {
+        if (stack.getItem() == com.hybridavenger69.mtstorage.MSItems.PATTERN.get()) {
             return PatternItem.fromCache(level, stack).isValid();
         }
         return stack.getItem() instanceof ICraftingPatternProvider && ((ICraftingPatternProvider) stack.getItem()).create(level, stack, null).isValid();

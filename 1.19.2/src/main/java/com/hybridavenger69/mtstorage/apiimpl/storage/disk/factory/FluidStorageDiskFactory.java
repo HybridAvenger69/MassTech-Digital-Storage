@@ -1,8 +1,6 @@
 package com.hybridavenger69.mtstorage.apiimpl.storage.disk.factory;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDisk;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDiskFactory;
 import com.hybridavenger69.mtstorage.apiimpl.storage.FluidStorageType;
@@ -20,7 +18,7 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class FluidStorageDiskFactory implements IStorageDiskFactory<FluidStack> {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "fluid");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "fluid");
 
     @Override
     public IStorageDisk<FluidStack> createFromNbt(ServerLevel level, CompoundTag tag) {
@@ -48,19 +46,19 @@ public class FluidStorageDiskFactory implements IStorageDiskFactory<FluidStack> 
         FluidStorageDiskItem item;
         switch (disk.getCapacity()) {
             case 64_000:
-                item = MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.SIXTY_FOUR_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.SIXTY_FOUR_K).get();
                 break;
             case 256_000:
-                item = MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.TWO_HUNDRED_FIFTY_SIX_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.TWO_HUNDRED_FIFTY_SIX_K).get();
                 break;
             case 1024_000:
-                item = MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.THOUSAND_TWENTY_FOUR_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.THOUSAND_TWENTY_FOUR_K).get();
                 break;
             case 4096_000:
-                item = MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.FOUR_THOUSAND_NINETY_SIX_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.FOUR_THOUSAND_NINETY_SIX_K).get();
                 break;
             default:
-                item = MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.CREATIVE).get();
+                item = com.hybridavenger69.mtstorage.MSItems.FLUID_STORAGE_DISKS.get(FluidStorageType.CREATIVE).get();
                 break;
         }
 

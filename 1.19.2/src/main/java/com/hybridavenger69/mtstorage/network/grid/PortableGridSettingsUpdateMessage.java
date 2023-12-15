@@ -98,5 +98,3 @@ public class PortableGridSettingsUpdateMessage {
         ctx.get().setPacketHandled(true);
     }
 }
-
-

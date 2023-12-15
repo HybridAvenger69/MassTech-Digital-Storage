@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingManager;
 import com.hybridavenger69.mtstorage.api.autocrafting.task.ICraftingTask;
@@ -27,7 +26,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class CraftingMonitorNetworkNode extends NetworkNode implements ICraftingMonitor {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "crafting_monitor");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "crafting_monitor");
 
     private static final String NBT_TAB_SELECTED = "TabSelected";
     private static final String NBT_TAB_PAGE = "TabPage";

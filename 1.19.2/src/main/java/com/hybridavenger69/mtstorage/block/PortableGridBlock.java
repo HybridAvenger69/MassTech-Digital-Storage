@@ -4,7 +4,6 @@ import com.hybridavenger69.mtstorage.apiimpl.API;
 import com.hybridavenger69.mtstorage.apiimpl.network.grid.factory.PortableGridBlockGridFactory;
 import com.hybridavenger69.mtstorage.blockentity.grid.portable.PortableGridBlockEntity;
 import com.hybridavenger69.mtstorage.blockentity.grid.portable.PortableGridDiskState;
-//import com.hybridavenger69.mtstorage.item.blockitem.PortableGridBlockItem;
 import com.hybridavenger69.mtstorage.item.blockitem.PortableGridBlockItem;
 import com.hybridavenger69.mtstorage.util.BlockUtils;
 import net.minecraft.core.BlockPos;
@@ -32,74 +31,75 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nullable;
 
 public class PortableGridBlock extends BaseBlock implements EntityBlock {
-  public static final EnumProperty<PortableGridDiskState> DISK_STATE = EnumProperty.create("disk_state", PortableGridDiskState.class);
-  public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
+    public static final EnumProperty<PortableGridDiskState> DISK_STATE = EnumProperty.create("disk_state", PortableGridDiskState.class);
+    public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 
-  private static final VoxelShape SHAPE = box(0, 0, 0, 16, 13.2, 16);
+    private static final VoxelShape SHAPE = box(0, 0, 0, 16, 13.2, 16);
 
-   private final PortableGridBlockItem.Type type;
+    private final PortableGridBlockItem.Type type;
 
-  public PortableGridBlock(PortableGridBlockItem.Type type) {
-      super(BlockUtils.DEFAULT_ROCK_PROPERTIES);
+    public PortableGridBlock(PortableGridBlockItem.Type type) {
+        super(BlockUtils.DEFAULT_ROCK_PROPERTIES);
 
-      this.type = type;
-      this.registerDefaultState(defaultBlockState().setValue(DISK_STATE, PortableGridDiskState.NONE).setValue(ACTIVE, false));
-  }
+        this.type = type;
+        this.registerDefaultState(defaultBlockState().setValue(DISK_STATE, PortableGridDiskState.NONE).setValue(ACTIVE, false));
+    }
 
-  @Override
-  protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-      super.createBlockStateDefinition(builder);
-
-      builder.add(DISK_STATE);
-      builder.add(ACTIVE);
-      }
     @Override
-  @SuppressWarnings("deprecation")
-  public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
-      return SHAPE;
-  }
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
 
-  @Override
-  public BlockDirection getDirection() {
-      return BlockDirection.HORIZONTAL;
-  }
+        builder.add(DISK_STATE);
+        builder.add(ACTIVE);
+    }
 
-  @Override
-  public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-      return new PortableGridBlockEntity(type, pos, state);
-  }
+    @Override
+    @SuppressWarnings("deprecation")
+    public VoxelShape getShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
+        return SHAPE;
+    }
 
-  @Override
-  public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-      return level.isClientSide ? null : new BlockEntityTicker<T>() {
-          @Override
-          public void tick(Level level, BlockPos pos, BlockState state, T blockEntity) {
-              if (blockEntity instanceof PortableGridBlockEntity) {
-                  PortableGridBlockEntity.serverTick((PortableGridBlockEntity) blockEntity);
-              }
-          }
-      };
-  }
+    @Override
+    public BlockDirection getDirection() {
+        return BlockDirection.HORIZONTAL;
+    }
 
-  @Override
-  @SuppressWarnings("deprecation")
-  public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-      if (!level.isClientSide) {
-          API.instance().getGridManager().openGrid(PortableGridBlockGridFactory.ID, (ServerPlayer) player, pos);
+    @Override
+    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+        return new PortableGridBlockEntity(type, pos, state);
+    }
 
-          ((PortableGridBlockEntity) level.getBlockEntity(pos)).onOpened();
-      }
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
+        return level.isClientSide ? null : new BlockEntityTicker<T>() {
+            @Override
+            public void tick(Level level, BlockPos pos, BlockState state, T blockEntity) {
+                if (blockEntity instanceof PortableGridBlockEntity) {
+                    PortableGridBlockEntity.serverTick((PortableGridBlockEntity) blockEntity);
+                }
+            }
+        };
+    }
 
-      return InteractionResult.SUCCESS;
-  }
+    @Override
+    @SuppressWarnings("deprecation")
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (!level.isClientSide) {
+            API.instance().getGridManager().openGrid(PortableGridBlockGridFactory.ID, (ServerPlayer) player, pos);
 
-  @Override
-  public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-      super.setPlacedBy(level, pos, state, placer, stack);
+            ((PortableGridBlockEntity) level.getBlockEntity(pos)).onOpened();
+        }
 
-      if (!level.isClientSide) {
-          ((PortableGridBlockEntity) level.getBlockEntity(pos)).applyDataFromItemToBlockEntity(stack);
-          ((PortableGridBlockEntity) level.getBlockEntity(pos)).updateState();
-      }
-  }
+        return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        super.setPlacedBy(level, pos, state, placer, stack);
+
+        if (!level.isClientSide) {
+            ((PortableGridBlockEntity) level.getBlockEntity(pos)).applyDataFromItemToBlockEntity(stack);
+            ((PortableGridBlockEntity) level.getBlockEntity(pos)).updateState();
+        }
+    }
 }

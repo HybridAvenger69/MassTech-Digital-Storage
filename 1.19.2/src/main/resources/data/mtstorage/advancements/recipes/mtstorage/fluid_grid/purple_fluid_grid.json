@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "mtstorage:fluid_grid/purple_fluid_grid"
+    ]
+  },
+  "criteria": {
+    "mtstorage:grid": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:grid"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mtstorage:fluid_grid/purple_fluid_grid"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mtstorage:grid",
+      "has_the_recipe"
+    ]
+  ]
+}

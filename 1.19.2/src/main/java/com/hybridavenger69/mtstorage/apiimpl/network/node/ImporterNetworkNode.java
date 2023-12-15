@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.node.ICoverable;
 import com.hybridavenger69.mtstorage.api.util.Action;
@@ -32,7 +31,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
 public class ImporterNetworkNode extends NetworkNode implements IComparable, IWhitelistBlacklist, IType, ICoverable {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "importer");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "importer");
 
     private static final String NBT_COMPARE = "Compare";
     private static final String NBT_MODE = "Mode";

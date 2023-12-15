@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.datageneration;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.block.BlockDirection;
 import net.minecraft.core.Direction;
@@ -79,24 +78,24 @@ public class BlockModels {
     public void customLoaderRSBlock(Block block, ResourceLocation path, ModelFile connectedModel, ModelFile disconnectedModel) {
         var model = generator.models().getBuilder(path.toString())
             .renderType("cutout").customLoader((builder, filehelper) ->
-                new CustomLoaderBuilderBasic(new ResourceLocation(HybridIDS.MTStorage_MODID, "disk_manipulator"), builder, filehelper)).end();
+                new CustomLoaderBuilderBasic(new ResourceLocation(MS.ID, "disk_manipulator"), builder, filehelper)).end();
 
         generator.getVariantBuilder(block).setModels(generator.getVariantBuilder(block).partialState(),
             ConfiguredModel.builder().modelFile(model).buildLast());
     }
 
     public BlockModelBuilder createDetectorModel(String name, ResourceLocation torch) {
-        return generator.models().withExistingParent(name, new ResourceLocation(HybridIDS.MTStorage_MODID, "detector"))
+        return generator.models().withExistingParent(name, new ResourceLocation(MS.ID, "detector"))
             .texture("torch", torch);
     }
 
     public BlockModelBuilder createWirelessTransmitterModel(String name, ResourceLocation cutout) {
-        return generator.models().withExistingParent(name, new ResourceLocation(HybridIDS.MTStorage_MODID, "wireless_transmitter"))
+        return generator.models().withExistingParent(name, new ResourceLocation(MS.ID, "wireless_transmitter"))
             .texture("cutout", cutout);
     }
 
     public BlockModelBuilder createCubeCutoutModel(String name, ResourceLocation down, ResourceLocation downCutout, ResourceLocation up, ResourceLocation upCutout, ResourceLocation east, ResourceLocation eastCutout, ResourceLocation west, ResourceLocation westCutout, ResourceLocation north, ResourceLocation northCutout, ResourceLocation south, ResourceLocation southCutout) {
-        return generator.models().withExistingParent(name, new ResourceLocation(HybridIDS.MTStorage_MODID, "cube_cutout"))
+        return generator.models().withExistingParent(name, new ResourceLocation(MS.ID, "cube_cutout"))
             .texture("particle", north)
             .texture("east", east)
             .texture("south", south)
@@ -113,7 +112,7 @@ public class BlockModels {
     }
 
     public BlockModelBuilder createControllerNearlyCutoutModel(String name, ResourceLocation particle, ResourceLocation all, ResourceLocation grayCutout, ResourceLocation cutout) {
-        return generator.models().withExistingParent(name, new ResourceLocation(HybridIDS.MTStorage_MODID, "block/controller_nearly"))
+        return generator.models().withExistingParent(name, new ResourceLocation(MS.ID, "block/controller_nearly"))
             .texture("particle", particle)
             .texture("all", all)
             .texture("cutout_gray", grayCutout)
@@ -121,14 +120,14 @@ public class BlockModels {
     }
 
     public BlockModelBuilder createCubeAllCutoutModel(String name, ResourceLocation particle, ResourceLocation all, ResourceLocation cutout) {
-        return generator.models().withExistingParent(name, new ResourceLocation(HybridIDS.MTStorage_MODID, "cube_all_cutout"))
+        return generator.models().withExistingParent(name, new ResourceLocation(MS.ID, "cube_all_cutout"))
             .texture("particle", particle)
             .texture("all", all)
             .texture("cutout", cutout);
     }
 
     public BlockModelBuilder createCubeNorthCutoutModel(String name, ResourceLocation down, ResourceLocation up, ResourceLocation north, ResourceLocation south, ResourceLocation east, ResourceLocation west, ResourceLocation particle, ResourceLocation cutout) {
-        return generator.models().withExistingParent(name, new ResourceLocation(HybridIDS.MTStorage_MODID, "cube_north_cutout"))
+        return generator.models().withExistingParent(name, new ResourceLocation(MS.ID, "cube_north_cutout"))
             .texture("particle", particle)
             .texture("east", east)
             .texture("south", south)

@@ -1,7 +1,6 @@
 package com.hybridavenger69.mtstorage.item;
 
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.storage.StorageType;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDisk;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDiskProvider;
@@ -93,7 +92,7 @@ public class FluidStorageDiskItem extends Item implements IStorageDiskProvider {
                 API.instance().getStorageDiskManager((ServerLevel) level).remove(getId(diskStack));
                 API.instance().getStorageDiskManager((ServerLevel) level).markForSaving();
 
-                return new InteractionResultHolder<>(InteractionResult.SUCCESS, new ItemStack(MSItems.STORAGE_HOUSING.get()));
+                return new InteractionResultHolder<>(InteractionResult.SUCCESS, new ItemStack(com.hybridavenger69.mtstorage.MSItems.STORAGE_HOUSING.get()));
             }
         }
 

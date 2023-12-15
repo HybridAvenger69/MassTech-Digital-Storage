@@ -2,7 +2,6 @@ package com.hybridavenger69.mtstorage.item.blockitem;
 
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.MSBlocks;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDisk;
 import com.hybridavenger69.mtstorage.api.storage.disk.StorageDiskSyncData;
 import com.hybridavenger69.mtstorage.apiimpl.API;
@@ -83,7 +82,7 @@ public class FluidStorageBlockItem extends BaseBlockItem {
                     Containers.dropItemStack(level, player.getX(), player.getY(), player.getZ(), fluidStoragePart);
                 }
 
-                ItemStack processor = new ItemStack(MSItems.PROCESSORS.get(ProcessorItem.Type.BASIC).get());
+                ItemStack processor = new ItemStack(com.hybridavenger69.mtstorage.MSItems.PROCESSORS.get(ProcessorItem.Type.BASIC).get());
 
                 if (!player.getInventory().add(processor.copy())) {
                     Containers.dropItemStack(level, player.getX(), player.getY(), player.getZ(), processor);

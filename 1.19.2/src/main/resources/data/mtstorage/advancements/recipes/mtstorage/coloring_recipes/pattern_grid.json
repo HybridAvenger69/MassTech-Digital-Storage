@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "mtstorage:coloring_recipes/pattern_grid"
+    ]
+  },
+  "criteria": {
+    "mtstorage:controller": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mtstorage:controller"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mtstorage:coloring_recipes/pattern_grid"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "mtstorage:controller",
+      "has_the_recipe"
+    ]
+  ]
+}

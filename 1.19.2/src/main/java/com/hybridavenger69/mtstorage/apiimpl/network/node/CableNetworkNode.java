@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.node.ICoverable;
 import com.hybridavenger69.mtstorage.apiimpl.network.node.cover.CoverManager;
@@ -12,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 
 public class CableNetworkNode extends NetworkNode implements ICoverable {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "cable");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "cable");
 
     private final CoverManager coverManager;
 

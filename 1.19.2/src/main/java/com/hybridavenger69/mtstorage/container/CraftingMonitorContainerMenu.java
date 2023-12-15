@@ -56,11 +56,6 @@ public class CraftingMonitorContainerMenu extends BaseContainerMenu implements I
         }
     }
 
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
-
     public ICraftingMonitor getCraftingMonitor() {
         return craftingMonitor;
     }

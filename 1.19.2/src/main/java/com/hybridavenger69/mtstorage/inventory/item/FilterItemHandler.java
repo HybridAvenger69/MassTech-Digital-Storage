@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.inventory.item;
 
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.network.grid.IGridTab;
 import com.hybridavenger69.mtstorage.api.util.IFilter;
 import com.hybridavenger69.mtstorage.apiimpl.network.grid.GridTab;
@@ -29,7 +28,7 @@ public class FilterItemHandler extends BaseItemHandler {
         this.filters = filters;
         this.tabs = tabs;
 
-        this.addValidator(new ItemValidator(MSItems.FILTER.get()));
+        this.addValidator(new ItemValidator(com.hybridavenger69.mtstorage.MSItems.FILTER.get()));
     }
 
     @Override
@@ -61,7 +60,7 @@ public class FilterItemHandler extends BaseItemHandler {
         List<IFilter> foundFilters = new ArrayList<>();
 
         for (ItemStack stack : new ConfiguredItemsInFilterItemHandler(filterItem).getConfiguredItems()) {
-            if (stack.getItem() == MSItems.FILTER.get()) {
+            if (stack.getItem() == com.hybridavenger69.mtstorage.MSItems.FILTER.get()) {
                 handleFilterItem(stack);
             } else if (!stack.isEmpty()) {
                 foundFilters.add(new ItemFilter(stack, compare, mode, modFilter));

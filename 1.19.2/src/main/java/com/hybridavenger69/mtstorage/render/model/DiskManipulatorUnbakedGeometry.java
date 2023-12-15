@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.render.model;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.math.Transformation;
 import com.mojang.math.Vector3f;
 import com.hybridavenger69.mtstorage.MS;
@@ -24,13 +23,13 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class DiskManipulatorUnbakedGeometry extends AbstractUnbakedGeometry<DiskManipulatorUnbakedGeometry> {
-    private static final ResourceLocation BASE_MODEL_DISCONNECTED = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disk_manipulator/disconnected");
+    private static final ResourceLocation BASE_MODEL_DISCONNECTED = new ResourceLocation(MS.ID, "block/disk_manipulator/disconnected");
 
     private final Map<DyeColor, ResourceLocation> BASE_MODEL_CONNECTED = new HashMap<>();
-    private static final ResourceLocation DISK_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/disk");
-    private static final ResourceLocation DISK_DISCONNECTED_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/disk_disconnected");
-    private static final ResourceLocation DISK_FULL_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/disk_full");
-    private static final ResourceLocation DISK_NEAR_CAPACITY_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/disk_near_capacity");
+    private static final ResourceLocation DISK_MODEL = new ResourceLocation(MS.ID, "block/disks/disk");
+    private static final ResourceLocation DISK_DISCONNECTED_MODEL = new ResourceLocation(MS.ID, "block/disks/disk_disconnected");
+    private static final ResourceLocation DISK_FULL_MODEL = new ResourceLocation(MS.ID, "block/disks/disk_full");
+    private static final ResourceLocation DISK_NEAR_CAPACITY_MODEL = new ResourceLocation(MS.ID, "block/disks/disk_near_capacity");
 
     @Override
     protected Set<ResourceLocation> getModels() {
@@ -47,7 +46,7 @@ public class DiskManipulatorUnbakedGeometry extends AbstractUnbakedGeometry<Disk
 
     public DiskManipulatorUnbakedGeometry() {
         for (DyeColor value : DyeColor.values()) {
-            BASE_MODEL_CONNECTED.put(value, new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disk_manipulator/" + value.getName()));
+            BASE_MODEL_CONNECTED.put(value, new ResourceLocation(MS.ID, "block/disk_manipulator/" + value.getName()));
         }
     }
 

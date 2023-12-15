@@ -30,7 +30,6 @@ import net.minecraftforge.items.SlotItemHandler;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class GridContainerMenu extends BaseContainerMenu implements ICraftingGridListener {
@@ -63,7 +62,7 @@ public class GridContainerMenu extends BaseContainerMenu implements ICraftingGri
 
     public void initSlots() {
         this.slots.clear();
-        this.slots.clear();
+        this.lastSlots.clear();
 
         this.transferManager.clearTransfers();
 
@@ -278,8 +277,7 @@ public class GridContainerMenu extends BaseContainerMenu implements ICraftingGri
             Slot slot = slots.get(i);
 
             if (slot instanceof CraftingGridSlot || slot == craftingResultSlot || slot == patternResultSlot) {
-                ContainerListener[] ContainerListeners = new ContainerListener[0];
-                for (ContainerListener listener : ContainerListeners) {
+                for (ContainerListener listener : containerListeners) {
                     // @Volatile: We can't use ContainerListener#slotChanged since ServerPlayer blocks ResultSlot changes...
                     if (listener instanceof ServerPlayer) {
                         ((ServerPlayer) listener).connection.send(new ClientboundContainerSetSlotPacket(containerId, incrementStateId(), i, slot.getItem()));
@@ -329,11 +327,6 @@ public class GridContainerMenu extends BaseContainerMenu implements ICraftingGri
     }
 
     @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
-
-    @Override
     public boolean canTakeItemForPickAll(ItemStack stack, Slot slot) {
         if (slot == craftingResultSlot || slot == patternResultSlot) {
             return false;
@@ -347,25 +340,24 @@ public class GridContainerMenu extends BaseContainerMenu implements ICraftingGri
         return grid.getSlotId();
     }
 
-    //public void updatePatternSlotPositions(int newOffset) {
-      //  patternScrollOffset = newOffset;
-      //  int yPosition = screenInfoProvider.getTopHeight() + (screenInfoProvider.getVisibleRows() * 18) + 4;
-       // int originalYPosition = yPosition;
+    public void updatePatternSlotPositions(int newOffset) {
+        patternScrollOffset = newOffset;
+        int yPosition = screenInfoProvider.getTopHeight() + (screenInfoProvider.getVisibleRows() * 18) + 4;
+        int originalYPosition = yPosition;
 
-      //  for (int i = 0; i < itemPatternSlots.size(); i++) {
+        for (int i = 0; i < itemPatternSlots.size(); i++) {
 
-       //     if (i == GridNetworkNode.PROCESSING_MATRIX_SIZE) { // reset when reaching output slots
-       //         yPosition = originalYPosition;
-        //    }
+            if (i == GridNetworkNode.PROCESSING_MATRIX_SIZE) { // reset when reaching output slots
+                yPosition = originalYPosition;
+            }
 
-         //   if (isVisible(i)) {
-         //       for (List<Slot> slotList : Arrays.asList(itemPatternSlots, fluidPatternSlots)) {
-         ///           slotList.get(i).y = yPosition;
-         //       }
-         //       if ((i + 1) % 3 == 0) {
-            //        yPosition += 18;
-          //      }
-          //  }
-       // }
-   // }
+            if (isVisible(i)) {
+                itemPatternSlots.get(i).y = yPosition;
+                fluidPatternSlots.get(i).y = yPosition;
+                if ((i + 1) % 3 == 0) {
+                    yPosition += 18;
+                }
+            }
+        }
+    }
 }

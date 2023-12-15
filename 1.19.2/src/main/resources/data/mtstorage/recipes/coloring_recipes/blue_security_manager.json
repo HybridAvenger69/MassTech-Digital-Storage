@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mtstorage",
+  "ingredients": [
+    {
+      "tag": "mtstorage:security_manager"
+    },
+    {
+      "tag": "forge:dyes/blue"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:blue_security_manager"
+  }
+}

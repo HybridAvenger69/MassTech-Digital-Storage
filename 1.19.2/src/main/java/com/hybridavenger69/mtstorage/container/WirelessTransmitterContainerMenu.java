@@ -17,9 +17,4 @@ public class WirelessTransmitterContainerMenu extends BaseContainerMenu {
 
         transferManager.addBiTransfer(player.getInventory(), wirelessTransmitter.getNode().getUpgrades());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

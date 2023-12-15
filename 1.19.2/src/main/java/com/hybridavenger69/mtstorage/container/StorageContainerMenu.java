@@ -17,9 +17,4 @@ public class StorageContainerMenu extends BaseContainerMenu {
 
         transferManager.addItemFilterTransfer(player.getInventory(), storage.getNode().getFilters());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

@@ -23,9 +23,4 @@ public class FluidInterfaceContainerMenu extends BaseContainerMenu {
         transferManager.addBiTransfer(player.getInventory(), fluidInterface.getNode().getIn());
         transferManager.addFluidFilterTransfer(player.getInventory(), fluidInterface.getNode().getOut());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

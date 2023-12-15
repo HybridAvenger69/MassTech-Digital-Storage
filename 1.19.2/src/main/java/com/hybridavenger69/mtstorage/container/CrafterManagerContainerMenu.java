@@ -64,7 +64,7 @@ public class CrafterManagerContainerMenu extends BaseContainerMenu {
         }
 
         this.slots.clear();
-        this.slots.clear();
+        this.lastSlots.clear();
         this.headings.clear();
 
         this.rows = 0;
@@ -196,10 +196,5 @@ public class CrafterManagerContainerMenu extends BaseContainerMenu {
         }
 
         return stack;
-    }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
     }
 }

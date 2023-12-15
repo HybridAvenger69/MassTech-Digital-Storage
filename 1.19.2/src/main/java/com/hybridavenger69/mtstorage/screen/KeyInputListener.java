@@ -1,8 +1,6 @@
 package com.hybridavenger69.mtstorage.screen;
 
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
-import com.hybridavenger69.mtstorage.MSKeyBindings;
 import com.hybridavenger69.mtstorage.integration.curios.CuriosIntegration;
 import com.hybridavenger69.mtstorage.inventory.player.PlayerSlot;
 import com.hybridavenger69.mtstorage.network.OpenNetworkItemMessage;
@@ -65,14 +63,14 @@ public class KeyInputListener {
     @SubscribeEvent
     public void onKeyInput(InputEvent.Key e) {
         if (Minecraft.getInstance().player != null) {
-            if (MSKeyBindings.OPEN_WIRELESS_GRID.isDown()) {
-                findAndOpen(MSItems.WIRELESS_GRID.get(), MSItems.CREATIVE_WIRELESS_GRID.get());
-            } else if (MSKeyBindings.OPEN_WIRELESS_FLUID_GRID.isDown()) {
-                findAndOpen(MSItems.WIRELESS_FLUID_GRID.get(), MSItems.CREATIVE_WIRELESS_FLUID_GRID.get());
-            } else if (MSKeyBindings.OPEN_PORTABLE_GRID.isDown()) {
-                findAndOpen(MSItems.PORTABLE_GRID.get(), MSItems.CREATIVE_PORTABLE_GRID.get());
-            } else if (MSKeyBindings.OPEN_WIRELESS_CRAFTING_MONITOR.isDown()) {
-                findAndOpen(MSItems.WIRELESS_CRAFTING_MONITOR.get(), MSItems.CREATIVE_WIRELESS_CRAFTING_MONITOR.get());
+            if (com.hybridavenger69.mtstorage.MSKeyBindings.OPEN_WIRELESS_GRID.isDown()) {
+                findAndOpen(com.hybridavenger69.mtstorage.MSItems.WIRELESS_GRID.get(), com.hybridavenger69.mtstorage.MSItems.CREATIVE_WIRELESS_GRID.get());
+            } else if (com.hybridavenger69.mtstorage.MSKeyBindings.OPEN_WIRELESS_FLUID_GRID.isDown()) {
+                findAndOpen(com.hybridavenger69.mtstorage.MSItems.WIRELESS_FLUID_GRID.get(), com.hybridavenger69.mtstorage.MSItems.CREATIVE_WIRELESS_FLUID_GRID.get());
+            } else if (com.hybridavenger69.mtstorage.MSKeyBindings.OPEN_PORTABLE_GRID.isDown()) {
+                findAndOpen(com.hybridavenger69.mtstorage.MSItems.PORTABLE_GRID.get(), com.hybridavenger69.mtstorage.MSItems.CREATIVE_PORTABLE_GRID.get());
+            } else if (com.hybridavenger69.mtstorage.MSKeyBindings.OPEN_WIRELESS_CRAFTING_MONITOR.isDown()) {
+                findAndOpen(com.hybridavenger69.mtstorage.MSItems.WIRELESS_CRAFTING_MONITOR.get(), com.hybridavenger69.mtstorage.MSItems.CREATIVE_WIRELESS_CRAFTING_MONITOR.get());
             }
         }
     }

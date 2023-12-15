@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.screen.widget;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.grid.IGridTab;
@@ -119,7 +118,7 @@ public class TabListWidget<T extends AbstractContainerMenu> {
         int tx = x + getXOffset() + ((IGridTab.TAB_WIDTH + 1) * num);
         int ty = y;
 
-        screen.bindTexture(HybridIDS.MTStorage_MODID, "icons.png");
+        screen.bindTexture(MS.ID, "icons.png");
 
         if (!isSelected) {
             ty += 3;

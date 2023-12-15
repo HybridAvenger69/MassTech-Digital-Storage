@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_controller",
+    "mtstorage:orange_controller",
+    "mtstorage:magenta_controller",
+    "mtstorage:controller",
+    "mtstorage:yellow_controller",
+    "mtstorage:lime_controller",
+    "mtstorage:pink_controller",
+    "mtstorage:gray_controller",
+    "mtstorage:light_gray_controller",
+    "mtstorage:cyan_controller",
+    "mtstorage:purple_controller",
+    "mtstorage:blue_controller",
+    "mtstorage:brown_controller",
+    "mtstorage:green_controller",
+    "mtstorage:red_controller",
+    "mtstorage:black_controller"
+  ]
+}

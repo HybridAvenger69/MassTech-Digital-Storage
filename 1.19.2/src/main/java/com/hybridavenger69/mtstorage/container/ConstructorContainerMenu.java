@@ -24,9 +24,4 @@ public class ConstructorContainerMenu extends BaseContainerMenu {
         transferManager.addBiTransfer(player.getInventory(), constructor.getNode().getUpgrades());
         transferManager.addFilterTransfer(player.getInventory(), constructor.getNode().getItemFilters(), constructor.getNode().getFluidFilters(), constructor.getNode()::getType);
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

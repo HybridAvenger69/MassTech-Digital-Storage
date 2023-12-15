@@ -1,7 +1,6 @@
 package com.hybridavenger69.mtstorage.item;
 
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.util.IComparer;
 import com.hybridavenger69.mtstorage.api.util.IFilter;
 import com.hybridavenger69.mtstorage.container.FilterContainerMenu;
@@ -140,7 +139,7 @@ public class FilterItem extends Item {
 
         if (!level.isClientSide) {
             if (player.isCrouching()) {
-                return new InteractionResultHolder<>(InteractionResult.SUCCESS, new ItemStack(MSItems.FILTER.get()));
+                return new InteractionResultHolder<>(InteractionResult.SUCCESS, new ItemStack(com.hybridavenger69.mtstorage.MSItems.FILTER.get()));
             }
 
             player.openMenu(new MenuProvider() {

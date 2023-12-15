@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPattern;
 import com.hybridavenger69.mtstorage.api.autocrafting.ICraftingPatternContainer;
@@ -39,7 +38,7 @@ import java.util.UUID;
 
 public class CrafterNetworkNode extends NetworkNode implements ICraftingPatternContainer {
 
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "crafter");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "crafter");
     private static final Component DEFAULT_NAME = Component.translatable("gui.mtstorage.crafter");
     private static final String NBT_DISPLAY_NAME = "DisplayName";
     private static final String NBT_UUID = "CrafterUuid";

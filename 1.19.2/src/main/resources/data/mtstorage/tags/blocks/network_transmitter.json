@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_network_transmitter",
+    "mtstorage:orange_network_transmitter",
+    "mtstorage:magenta_network_transmitter",
+    "mtstorage:network_transmitter",
+    "mtstorage:yellow_network_transmitter",
+    "mtstorage:lime_network_transmitter",
+    "mtstorage:pink_network_transmitter",
+    "mtstorage:gray_network_transmitter",
+    "mtstorage:light_gray_network_transmitter",
+    "mtstorage:cyan_network_transmitter",
+    "mtstorage:purple_network_transmitter",
+    "mtstorage:blue_network_transmitter",
+    "mtstorage:brown_network_transmitter",
+    "mtstorage:green_network_transmitter",
+    "mtstorage:red_network_transmitter",
+    "mtstorage:black_network_transmitter"
+  ]
+}

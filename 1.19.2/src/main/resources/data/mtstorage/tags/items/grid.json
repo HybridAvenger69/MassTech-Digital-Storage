@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_grid",
+    "mtstorage:orange_grid",
+    "mtstorage:magenta_grid",
+    "mtstorage:grid",
+    "mtstorage:yellow_grid",
+    "mtstorage:lime_grid",
+    "mtstorage:pink_grid",
+    "mtstorage:gray_grid",
+    "mtstorage:light_gray_grid",
+    "mtstorage:cyan_grid",
+    "mtstorage:purple_grid",
+    "mtstorage:blue_grid",
+    "mtstorage:brown_grid",
+    "mtstorage:green_grid",
+    "mtstorage:red_grid",
+    "mtstorage:black_grid"
+  ]
+}

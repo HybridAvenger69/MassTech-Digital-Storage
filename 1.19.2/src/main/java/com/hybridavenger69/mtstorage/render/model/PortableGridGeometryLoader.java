@@ -11,5 +11,3 @@ public class PortableGridGeometryLoader implements IGeometryLoader<PortableGridU
         return new PortableGridUnbakedGeometry();
     }
 }
-
-

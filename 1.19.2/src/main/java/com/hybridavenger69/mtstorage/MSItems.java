@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.apiimpl.storage.FluidStorageType;
 import com.hybridavenger69.mtstorage.apiimpl.storage.ItemStorageType;
 import com.hybridavenger69.mtstorage.block.BaseBlock;
@@ -23,7 +22,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.*;
 
 public final class MSItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, HybridIDS.MTStorage_MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MS.ID);
 
     public static final RegistryObject<QuartzEnrichedTechItem> QUARTZ_ENRICHED_TECH;
     public static final RegistryObject<SiliconItem> SILICON;
@@ -123,7 +122,7 @@ public final class MSItems {
         PORTABLE_GRID = ITEMS.register("portable_grid", () -> new PortableGridBlockItem(PortableGridBlockItem.Type.NORMAL));
         CREATIVE_PORTABLE_GRID = ITEMS.register("creative_portable_grid", () -> new PortableGridBlockItem(PortableGridBlockItem.Type.CREATIVE));
 
-        registerBlockItemFor(MSBlocks.QUARTZ_ENRICHED_IRON);
+        registerBlockItemFor(MSBlocks.QUARTZ_ENRICHED_TECH);
         MACHINE_CASING = registerBlockItemFor(MSBlocks.MACHINE_CASING);
         COVER = ITEMS.register("cover", CoverItem::new);
         HOLLOW_COVER = ITEMS.register("hollow_cover", HollowCoverItem::new);
@@ -164,7 +163,7 @@ public final class MSItems {
             )
         ));
 
-        COLORED_ITEM_TAGS.put(ItemTags.create(new ResourceLocation(HybridIDS.MTStorage_MODID, CONTROLLER.get(ColorMap.DEFAULT_COLOR).getId().getPath())), CONTROLLER);
+        COLORED_ITEM_TAGS.put(ItemTags.create(new ResourceLocation(MS.ID, CONTROLLER.get(ColorMap.DEFAULT_COLOR).getId().getPath())), CONTROLLER);
 
         LATE_REGISTRATION.add(() -> {
             MSBlocks.CONTROLLER.forEach((color, block) -> {

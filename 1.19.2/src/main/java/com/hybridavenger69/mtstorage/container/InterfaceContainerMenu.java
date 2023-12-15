@@ -33,9 +33,4 @@ public class InterfaceContainerMenu extends BaseContainerMenu {
         transferManager.addBiTransfer(player.getInventory(), blockEntity.getNode().getImportItems());
         transferManager.addTransfer(blockEntity.getNode().getExportItems(), player.getInventory());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

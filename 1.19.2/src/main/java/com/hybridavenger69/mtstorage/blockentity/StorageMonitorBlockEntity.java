@@ -6,6 +6,7 @@ import com.hybridavenger69.mtstorage.blockentity.config.IComparable;
 import com.hybridavenger69.mtstorage.blockentity.config.IType;
 import com.hybridavenger69.mtstorage.blockentity.data.BlockEntitySynchronizationParameter;
 import com.hybridavenger69.mtstorage.blockentity.data.BlockEntitySynchronizationSpec;
+import com.hybridavenger69.mtstorage.config.ServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;

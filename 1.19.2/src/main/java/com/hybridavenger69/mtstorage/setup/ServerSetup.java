@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.setup;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.command.disk.CreateDiskCommand;
 import com.hybridavenger69.mtstorage.command.disk.ListDiskCommand;
@@ -14,7 +13,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 public class ServerSetup {
     @SubscribeEvent
     public void onRegisterCommands(RegisterCommandsEvent e) {
-        e.getDispatcher().register(Commands.literal(HybridIDS.MTStorage_MODID)
+        e.getDispatcher().register(Commands.literal(MS.ID)
             .then(Commands.literal("pattern")
                 .then(PatternDumpCommand.register()))
             .then(Commands.literal("disk")

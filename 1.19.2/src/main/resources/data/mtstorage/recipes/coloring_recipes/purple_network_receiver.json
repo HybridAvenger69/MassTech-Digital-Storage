@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mtstorage",
+  "ingredients": [
+    {
+      "tag": "mtstorage:network_receiver"
+    },
+    {
+      "tag": "forge:dyes/purple"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:purple_network_receiver"
+  }
+}

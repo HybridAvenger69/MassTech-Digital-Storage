@@ -175,148 +175,149 @@ public class PortableGridBlockEntity extends BaseBlockEntity implements IGrid, I
     public static void serverTick(PortableGridBlockEntity blockEntity) {
         if (blockEntity.loadNextTick) {
             blockEntity.active = blockEntity.isGridActive();
-           blockEntity.diskState = blockEntity.getDiskState();
-       blockEntity.loadNextTick = false;
-      }
+            blockEntity.diskState = blockEntity.getDiskState();
+            blockEntity.loadNextTick = false;
+        }
     }
+
     private final BaseItemHandler disk = new BaseItemHandler(1)
-      .addValidator(new StorageDiskItemValidator())
-      .addListener(new BlockEntityInventoryListener(this))
-      .addListener((handler, slot, reading) -> {
-          if (level != null && !level.isClientSide) {
-              loadStorage();
+        .addValidator(new StorageDiskItemValidator())
+        .addListener(new BlockEntityInventoryListener(this))
+        .addListener((handler, slot, reading) -> {
+            if (level != null && !level.isClientSide) {
+                loadStorage();
 
-                  if (!reading) {
-                  updateState();
+                if (!reading) {
+                    updateState();
 
-                      LevelUtils.updateBlock(level, worldPosition); // Re-send grid type
-              }
-          }
-      });
+                    LevelUtils.updateBlock(level, worldPosition); // Re-send grid type
+                }
+            }
+        });
 
-      private void loadStorage() {
-      ItemStack diskStack = getDiskInventory().getStackInSlot(0);
+    private void loadStorage() {
+        ItemStack diskStack = getDiskInventory().getStackInSlot(0);
 
-          if (diskStack.isEmpty()) {
-          this.storage = null;
-          this.cache = null;
-      } else {
-          IStorageDisk diskInSlot = API.instance().getStorageDiskManager((ServerLevel) level).getByStack(getDiskInventory().getStackInSlot(0));
+        if (diskStack.isEmpty()) {
+            this.storage = null;
+            this.cache = null;
+        } else {
+            IStorageDisk diskInSlot = API.instance().getStorageDiskManager((ServerLevel) level).getByStack(getDiskInventory().getStackInSlot(0));
 
-              if (diskInSlot != null) {
-              StorageType diskType = ((IStorageDiskProvider) getDiskInventory().getStackInSlot(0).getItem()).getType();
+            if (diskInSlot != null) {
+                StorageType diskType = ((IStorageDiskProvider) getDiskInventory().getStackInSlot(0).getItem()).getType();
 
                 if (diskType == StorageType.ITEM) {
-                      this.storage = new PortableItemStorageDisk(diskInSlot, this);
-                  this.cache = new PortableItemStorageCache(this);
-              } else if (diskType == StorageType.FLUID) {
-                  this.storage = new PortableFluidStorageDisk(diskInSlot, this);
-                  this.cache = new PortableFluidStorageCache(this);
-              }
+                    this.storage = new PortableItemStorageDisk(diskInSlot, this);
+                    this.cache = new PortableItemStorageCache(this);
+                } else if (diskType == StorageType.FLUID) {
+                    this.storage = new PortableFluidStorageDisk(diskInSlot, this);
+                    this.cache = new PortableFluidStorageCache(this);
+                }
 
-              this.storage.setSettings(PortableGridBlockEntity.this::updateState, PortableGridBlockEntity.this);
-          } else {
-              this.storage = null;
-              this.cache = null;
-          }
-      }
+                this.storage.setSettings(PortableGridBlockEntity.this::updateState, PortableGridBlockEntity.this);
+            } else {
+                this.storage = null;
+                this.cache = null;
+            }
+        }
 
-      if (cache != null) {
-          cache.invalidate(InvalidateCause.DISK_INVENTORY_CHANGED);
-      }
+        if (cache != null) {
+            cache.invalidate(InvalidateCause.DISK_INVENTORY_CHANGED);
+        }
     }
 
     @Override
     public void onLoad() {
-      super.onLoad();
+        super.onLoad();
 
-      this.loadStorage();
-     loadNextTick = true;
+        this.loadStorage();
+
+        loadNextTick = true;
     }
 
     public void applyDataFromItemToBlockEntity(ItemStack stack) {
-      this.sortingType = WirelessGridItem.getSortingType(stack);
-      this.sortingDirection = WirelessGridItem.getSortingDirection(stack);
-      this.searchBoxMode = WirelessGridItem.getSearchBoxMode(stack);
-      this.tabSelected = WirelessGridItem.getTabSelected(stack);
-      this.tabPage = WirelessGridItem.getTabPage(stack);
-      this.size = WirelessGridItem.getSize(stack);
+        this.sortingType = WirelessGridItem.getSortingType(stack);
+        this.sortingDirection = WirelessGridItem.getSortingDirection(stack);
+        this.searchBoxMode = WirelessGridItem.getSearchBoxMode(stack);
+        this.tabSelected = WirelessGridItem.getTabSelected(stack);
+        this.tabPage = WirelessGridItem.getTabPage(stack);
+        this.size = WirelessGridItem.getSize(stack);
 
-      this.energyStorage = createEnergyStorage(stack.getCapability(ForgeCapabilities.ENERGY).map(IEnergyStorage::getEnergyStored).orElse(0));
+        this.energyStorage = createEnergyStorage(stack.getCapability(ForgeCapabilities.ENERGY).map(IEnergyStorage::getEnergyStored).orElse(0));
 
-      if (stack.hasTag()) {
-          for (int i = 0; i < 4; ++i) {
-              StackUtils.readItems(filter, i, stack.getTag());
-          }
+        if (stack.hasTag()) {
+            for (int i = 0; i < 4; ++i) {
+                StackUtils.readItems(filter, i, stack.getTag());
+            }
 
-          StackUtils.readItems(disk, 4, stack.getTag());
+            StackUtils.readItems(disk, 4, stack.getTag());
 
-          this.redstoneMode = RedstoneMode.read(stack.getTag());
-          if (stack.getTag().contains(PortableGrid.NBT_ITEM_STORAGE_TRACKER_ID)) {
-              itemStorageTrackerId = stack.getTag().getUUID(NBT_ITEM_STORAGE_TRACKER_ID);
-          }
+            this.redstoneMode = RedstoneMode.read(stack.getTag());
+            if (stack.getTag().contains(PortableGrid.NBT_ITEM_STORAGE_TRACKER_ID)) {
+                itemStorageTrackerId = stack.getTag().getUUID(NBT_ITEM_STORAGE_TRACKER_ID);
+            }
 
-          if (stack.getTag().contains(PortableGrid.NBT_FLUID_STORAGE_TRACKER_ID)) {
-              fluidStorageTrackerId = stack.getTag().getUUID(NBT_FLUID_STORAGE_TRACKER_ID);
-          }
+            if (stack.getTag().contains(PortableGrid.NBT_FLUID_STORAGE_TRACKER_ID)) {
+                fluidStorageTrackerId = stack.getTag().getUUID(NBT_FLUID_STORAGE_TRACKER_ID);
+            }
 
-              if (stack.getTag().contains(NBT_ENCHANTMENTS)) {
-              enchants = stack.getTag().getList(NBT_ENCHANTMENTS, Tag.TAG_COMPOUND);
-          }
-      }
+            if (stack.getTag().contains(NBT_ENCHANTMENTS)) {
+                enchants = stack.getTag().getList(NBT_ENCHANTMENTS, Tag.TAG_COMPOUND);
+            }
+        }
 
-      setChanged();
-     }
+        setChanged();
+    }
 
-       public void applyDataFromBlockEntityToItem(ItemStack stack) {
+    public void applyDataFromBlockEntityToItem(ItemStack stack) {
         stack.setTag(new CompoundTag());
 
-          stack.getTag().putInt(GridNetworkNode.NBT_SORTING_DIRECTION, sortingDirection);
-      stack.getTag().putInt(GridNetworkNode.NBT_SORTING_TYPE, sortingType);
-      stack.getTag().putInt(GridNetworkNode.NBT_SEARCH_BOX_MODE, searchBoxMode);
-      stack.getTag().putInt(GridNetworkNode.NBT_SIZE, size);
-      stack.getTag().putInt(GridNetworkNode.NBT_TAB_SELECTED, tabSelected);
-     stack.getTag().putInt(GridNetworkNode.NBT_TAB_PAGE, tabPage);
+        stack.getTag().putInt(GridNetworkNode.NBT_SORTING_DIRECTION, sortingDirection);
+        stack.getTag().putInt(GridNetworkNode.NBT_SORTING_TYPE, sortingType);
+        stack.getTag().putInt(GridNetworkNode.NBT_SEARCH_BOX_MODE, searchBoxMode);
+        stack.getTag().putInt(GridNetworkNode.NBT_SIZE, size);
+        stack.getTag().putInt(GridNetworkNode.NBT_TAB_SELECTED, tabSelected);
+        stack.getTag().putInt(GridNetworkNode.NBT_TAB_PAGE, tabPage);
 
-          if (itemStorageTrackerId != null) {
-          stack.getTag().putUUID(PortableGrid.NBT_ITEM_STORAGE_TRACKER_ID, itemStorageTrackerId);
-      }
-      if (fluidStorageTrackerId != null) {
-          stack.getTag().putUUID(PortableGrid.NBT_FLUID_STORAGE_TRACKER_ID, fluidStorageTrackerId);
-      }
+        if (itemStorageTrackerId != null) {
+            stack.getTag().putUUID(PortableGrid.NBT_ITEM_STORAGE_TRACKER_ID, itemStorageTrackerId);
+        }
+        if (fluidStorageTrackerId != null) {
+            stack.getTag().putUUID(PortableGrid.NBT_FLUID_STORAGE_TRACKER_ID, fluidStorageTrackerId);
+        }
 
-         if (enchants != null) {
-         stack.getTag().put(NBT_ENCHANTMENTS, enchants);
-     }
+        if (enchants != null) {
+            stack.getTag().put(NBT_ENCHANTMENTS, enchants);
+        }
 
+        stack.getCapability(ForgeCapabilities.ENERGY, null).ifPresent(itemEnergy -> itemEnergy.receiveEnergy(energyStorage.getEnergyStored(), false));
 
-      stack.getCapability(ForgeCapabilities.ENERGY, null).ifPresent(itemEnergy -> itemEnergy.receiveEnergy(energyStorage.getEnergyStored(), false));
+        for (int i = 0; i < 4; ++i) {
+            StackUtils.writeItems(filter, i, stack.getTag());
+        }
 
-      for (int i = 0; i < 4; ++i) {
-      StackUtils.writeItems(filter, i, stack.getTag());
-  }
+        StackUtils.writeItems(disk, 4, stack.getTag());
 
-          StackUtils.writeItems(disk, 4, stack.getTag());
-
-      redstoneMode.write(stack.getTag());
+        redstoneMode.write(stack.getTag());
     }
 
     private EnergyStorage createEnergyStorage(int energyStored) {
-      return new EnergyStorage(
-          MS.SERVER_CONFIG.getPortableGrid().getCapacity(),
-          MS.SERVER_CONFIG.getPortableGrid().getCapacity(),
-          MS.SERVER_CONFIG.getPortableGrid().getCapacity(),
-           energyStored
-      );
+        return new EnergyStorage(
+            MS.SERVER_CONFIG.getPortableGrid().getCapacity(),
+            MS.SERVER_CONFIG.getPortableGrid().getCapacity(),
+            MS.SERVER_CONFIG.getPortableGrid().getCapacity(),
+            energyStored
+        );
     }
 
     @Override
     public GridType getGridType() {
-      return clientGridType != null ? clientGridType : getServerGridType();
+        return clientGridType != null ? clientGridType : getServerGridType();
     }
 
     private GridType getServerGridType() {
-      return (getDiskInventory().getStackInSlot(0).isEmpty() || ((IStorageDiskProvider) getDiskInventory().getStackInSlot(0).getItem()).getType() == StorageType.ITEM) ? GridType.NORMAL : GridType.FLUID;
+        return (getDiskInventory().getStackInSlot(0).isEmpty() || ((IStorageDiskProvider) getDiskInventory().getStackInSlot(0).getItem()).getType() == StorageType.ITEM) ? GridType.NORMAL : GridType.FLUID;
     }
 
     @Nullable

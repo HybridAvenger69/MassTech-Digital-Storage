@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.render.model.baked;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.math.Vector3f;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.MSBlocks;
@@ -127,7 +126,7 @@ public class CableCoverBakedModel extends BakedModelWrapper<BakedModel> {
 
         if (handle) {
             if (BORDER_SPRITE == null) {
-                BORDER_SPRITE = Minecraft.getInstance().getTextureAtlas(TextureAtlas.LOCATION_BLOCKS).apply(new ResourceLocation(HybridIDS.MTStorage_MODID, "block/cable_part_border"));
+                BORDER_SPRITE = Minecraft.getInstance().getTextureAtlas(TextureAtlas.LOCATION_BLOCKS).apply(new ResourceLocation(MS.ID, "block/cable_part_border"));
             }
 
             bounds = ConstantsCable.getHolderBounds(coverSide);

@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.datageneration;
 
-import com.hybridavenger69.mtstorage.MSItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -15,6 +14,6 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
-        MSItems.COLORED_ITEM_TAGS.forEach((tag, map) -> map.values().forEach(item -> tag(tag).add(item.get())));
+        com.hybridavenger69.mtstorage.MSItems.COLORED_ITEM_TAGS.forEach((tag, map) -> map.values().forEach(item -> tag(tag).add(item.get())));
     }
 }

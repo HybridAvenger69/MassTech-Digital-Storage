@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.datageneration;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.MSBlocks;
 import com.hybridavenger69.mtstorage.block.ControllerBlock;
@@ -15,7 +14,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class BlockModelGenerator extends BlockStateProvider {
-    private static final ResourceLocation BOTTOM = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/bottom");
+    private static final ResourceLocation BOTTOM = new ResourceLocation(MS.ID, "block/bottom");
 
     private final BlockModels models;
 
@@ -302,6 +301,6 @@ public class BlockModelGenerator extends BlockStateProvider {
     }
 
     private ResourceLocation resourceLocation(String folderName, String name) {
-        return new ResourceLocation(HybridIDS.MTStorage_MODID, "block/" + folderName + "/" + name);
+        return new ResourceLocation(MS.ID, "block/" + folderName + "/" + name);
     }
 }

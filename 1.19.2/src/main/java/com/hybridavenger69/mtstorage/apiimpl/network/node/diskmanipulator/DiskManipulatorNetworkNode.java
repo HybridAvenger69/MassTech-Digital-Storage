@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node.diskmanipulator;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.storage.AccessType;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDisk;
@@ -41,7 +40,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DiskManipulatorNetworkNode extends NetworkNode implements IComparable, IWhitelistBlacklist, IType, IStorageDiskContainerContext {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "disk_manipulator");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "disk_manipulator");
 
     public static final int IO_MODE_INSERT = 0;
     public static final int IO_MODE_EXTRACT = 1;

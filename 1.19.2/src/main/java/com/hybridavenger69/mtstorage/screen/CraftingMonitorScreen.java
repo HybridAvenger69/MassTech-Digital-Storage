@@ -1,7 +1,6 @@
 package com.hybridavenger69.mtstorage.screen;
 
 import com.google.common.collect.Lists;
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
@@ -182,7 +181,7 @@ public class CraftingMonitorScreen extends BaseScreen<CraftingMonitorContainerMe
             tabs.drawBackground(poseStack, x, y - tabs.getHeight());
         }
 
-        bindTexture(HybridIDS.MTStorage_MODID, "gui/crafting_preview.png");
+        bindTexture(MS.ID, "gui/crafting_preview.png");
 
         blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
 

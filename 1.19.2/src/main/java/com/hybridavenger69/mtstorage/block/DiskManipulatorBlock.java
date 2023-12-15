@@ -29,28 +29,28 @@ public class DiskManipulatorBlock extends ColoredNetworkBlock {
         return new DiskManipulatorBlockEntity(pos, state);
     }
 
-    //@Override
+    @Override
     @SuppressWarnings("deprecation")
-    //public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult rayTraceResult) {
-    //    InteractionResult result = MSBlocks.DISK_MANIPULATOR.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
-    //    if (result != InteractionResult.PASS) {
-    //       return result;
-    //    }
-//
-    //   if (!level.isClientSide) {
-    //       return NetworkUtils.attemptModify(level, pos, player, () -> NetworkHooks.openScreen(
-    //           (ServerPlayer) player,
-            //           new BlockEntityMenuProvider<DiskManipulatorBlockEntity>(
-    //              Component.translatable("gui.mtstorage.disk_manipulator"),
-    //              (blockEntity, windowId, inventory, p) -> new DiskManipulatorContainerMenu(blockEntity, p, windowId),
-    //               pos
-    //           ),
-    //           pos
-    //       ));
-    //   }
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult rayTraceResult) {
+        InteractionResult result = MSBlocks.DISK_MANIPULATOR.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
+        if (result != InteractionResult.PASS) {
+            return result;
+        }
 
-    //    return InteractionResult.SUCCESS;
-    // }
+        if (!level.isClientSide) {
+            return NetworkUtils.attemptModify(level, pos, player, () -> NetworkHooks.openScreen(
+                (ServerPlayer) player,
+                new BlockEntityMenuProvider<DiskManipulatorBlockEntity>(
+                    Component.translatable("gui.mtstorage.disk_manipulator"),
+                    (blockEntity, windowId, inventory, p) -> new DiskManipulatorContainerMenu(blockEntity, p, windowId),
+                    pos
+                ),
+                pos
+            ));
+        }
+
+        return InteractionResult.SUCCESS;
+    }
 
     @Override
     public BlockDirection getDirection() {

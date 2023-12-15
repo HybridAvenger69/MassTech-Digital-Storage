@@ -1,8 +1,6 @@
 package com.hybridavenger69.mtstorage.apiimpl.storage.disk.factory;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDisk;
 import com.hybridavenger69.mtstorage.api.storage.disk.IStorageDiskFactory;
 import com.hybridavenger69.mtstorage.apiimpl.storage.ItemStorageType;
@@ -20,7 +18,7 @@ import javax.annotation.Nullable;
 import java.util.UUID;
 
 public class ItemStorageDiskFactory implements IStorageDiskFactory<ItemStack> {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "item");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "item");
 
     @Override
     public IStorageDisk<ItemStack> createFromNbt(ServerLevel level, CompoundTag tag) {
@@ -50,19 +48,19 @@ public class ItemStorageDiskFactory implements IStorageDiskFactory<ItemStack> {
         StorageDiskItem item;
         switch (disk.getCapacity()) {
             case 1_000:
-                item = MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.ONE_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.ONE_K).get();
                 break;
             case 4_000:
-                item = MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.FOUR_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.FOUR_K).get();
                 break;
             case 16_000:
-                item = MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.SIXTEEN_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.SIXTEEN_K).get();
                 break;
             case 64_000:
-                item = MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.SIXTY_FOUR_K).get();
+                item = com.hybridavenger69.mtstorage.MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.SIXTY_FOUR_K).get();
                 break;
             default:
-                item = MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.CREATIVE).get();
+                item = com.hybridavenger69.mtstorage.MSItems.ITEM_STORAGE_DISKS.get(ItemStorageType.CREATIVE).get();
                 break;
         }
 

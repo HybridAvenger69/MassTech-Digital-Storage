@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.screen;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.container.ConstructorContainerMenu;
@@ -36,7 +35,7 @@ public class ConstructorScreen extends BaseScreen<ConstructorContainerMenu> {
 
     @Override
     public void renderBackground(PoseStack poseStack, int x, int y, int mouseX, int mouseY) {
-        bindTexture(HybridIDS.MTStorage_MODID, "gui/constructor.png");
+        bindTexture(MS.ID, "gui/constructor.png");
 
         blit(poseStack, x, y, 0, 0, imageWidth, imageHeight);
     }

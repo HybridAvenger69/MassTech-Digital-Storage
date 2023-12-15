@@ -1,5 +1,5 @@
 package com.hybridavenger69.mtstorage.loottable;
-/*
+
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.hybridavenger69.mtstorage.MSLootFunctions;
@@ -40,5 +40,3 @@ public class PortableGridBlockLootFunction extends LootItemConditionalFunction {
         }
     }
 }
-
- */

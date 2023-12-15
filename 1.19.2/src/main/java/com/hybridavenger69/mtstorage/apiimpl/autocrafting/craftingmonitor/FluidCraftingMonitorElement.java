@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.autocrafting.craftingmonitor;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.autocrafting.craftingmonitor.ICraftingMonitorElement;
@@ -21,7 +20,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class FluidCraftingMonitorElement implements ICraftingMonitorElement {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "fluid");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "fluid");
     private static final int COLOR_PROCESSING = 0xFFD9EDF7;
     private static final int COLOR_MISSING = 0xFFF2DEDE;
     private static final int COLOR_SCHEDULED = 0xFFE8E5CA;

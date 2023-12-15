@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.render.model;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.math.Transformation;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.render.model.baked.PortableGridBakedModel;
@@ -22,12 +21,12 @@ import java.util.Set;
 import java.util.function.Function;
 
 public class PortableGridUnbakedGeometry extends AbstractUnbakedGeometry<PortableGridUnbakedGeometry> {
-    private static final ResourceLocation BASE_CONNECTED_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/portable_grid_connected");
-    private static final ResourceLocation BASE_DISCONNECTED_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/portable_grid_disconnected");
-    private static final ResourceLocation DISK_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/portable_grid_disk");
-    private static final ResourceLocation DISK_DISCONNECTED_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/portable_grid_disk_disconnected");
-    private static final ResourceLocation DISK_FULL_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/portable_grid_disk_full");
-    private static final ResourceLocation DISK_NEAR_CAPACITY_MODEL = new ResourceLocation(HybridIDS.MTStorage_MODID, "block/disks/portable_grid_disk_near_capacity");
+    private static final ResourceLocation BASE_CONNECTED_MODEL = new ResourceLocation(MS.ID, "block/portable_grid_connected");
+    private static final ResourceLocation BASE_DISCONNECTED_MODEL = new ResourceLocation(MS.ID, "block/portable_grid_disconnected");
+    private static final ResourceLocation DISK_MODEL = new ResourceLocation(MS.ID, "block/disks/portable_grid_disk");
+    private static final ResourceLocation DISK_DISCONNECTED_MODEL = new ResourceLocation(MS.ID, "block/disks/portable_grid_disk_disconnected");
+    private static final ResourceLocation DISK_FULL_MODEL = new ResourceLocation(MS.ID, "block/disks/portable_grid_disk_full");
+    private static final ResourceLocation DISK_NEAR_CAPACITY_MODEL = new ResourceLocation(MS.ID, "block/disks/portable_grid_disk_near_capacity");
 
     @Override
     protected Set<ResourceLocation> getModels() {
@@ -75,4 +74,3 @@ public class PortableGridUnbakedGeometry extends AbstractUnbakedGeometry<Portabl
         };
     }
 }
-

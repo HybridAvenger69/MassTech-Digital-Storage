@@ -1,5 +1,6 @@
 package com.hybridavenger69.mtstorage.block;
 
+
 import com.hybridavenger69.mtstorage.MSBlocks;
 import com.hybridavenger69.mtstorage.api.network.INetwork;
 import com.hybridavenger69.mtstorage.api.network.NetworkType;
@@ -87,7 +88,7 @@ public class ControllerBlock extends BaseBlock implements EntityBlock {
         }
     }
 
-    //@Override
+    @Override
     @SuppressWarnings("deprecation")
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         InteractionResult result = super.use(state, level, pos, player, hand, hit);
@@ -95,22 +96,22 @@ public class ControllerBlock extends BaseBlock implements EntityBlock {
             return result;
         }
 
-       // ColorMap<ControllerBlock> colorMap = type == NetworkType.CREATIVE ? MSBlocks.CREATIVE_CONTROLLER : MSBlocks.CONTROLLER;
-        //DyeColor color = DyeColor.getColor(player.getItemInHand(hand));
+        ColorMap<ControllerBlock> colorMap = type == NetworkType.CREATIVE ? MSBlocks.CREATIVE_CONTROLLER : MSBlocks.CONTROLLER;
+        DyeColor color = DyeColor.getColor(player.getItemInHand(hand));
 
-       // if (color != null && !state.getBlock().equals(colorMap.get(color).get())) {
-        //    BlockState newState = colorMap.get(color).get().defaultBlockState().setValue(ENERGY_TYPE, state.getValue(ENERGY_TYPE));
+        if (color != null && !state.getBlock().equals(colorMap.get(color).get())) {
+            BlockState newState = colorMap.get(color).get().defaultBlockState().setValue(ENERGY_TYPE, state.getValue(ENERGY_TYPE));
 
-        //    return MSBlocks.CONTROLLER.setBlockState(newState, player.getItemInHand(hand), level, pos, player);
-        //}
+            return MSBlocks.CONTROLLER.setBlockState(newState, player.getItemInHand(hand), level, pos, player);
+        }
 
         if (!level.isClientSide) {
             return NetworkUtils.attemptModify(level, pos, player, () -> NetworkHooks.openScreen(
-               (ServerPlayer) player,
+                (ServerPlayer) player,
                 new MenuProvider() {
-                   @Override
+                    @Override
                     public Component getDisplayName() {
-                       return Component.translatable("gui.mtstorage." + (ControllerBlock.this.getType() == NetworkType.CREATIVE ? "creative_" : "") + "controller");
+                        return Component.translatable("gui.mtstorage." + (ControllerBlock.this.getType() == NetworkType.CREATIVE ? "creative_" : "") + "controller");
                     }
 
                     @Override

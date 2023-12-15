@@ -15,9 +15,4 @@ public class NetworkTransmitterContainerMenu extends BaseContainerMenu {
 
         transferManager.addBiTransfer(player.getInventory(), networkTransmitter.getNode().getNetworkCard());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "mtstorage",
+  "ingredients": [
+    {
+      "tag": "mtstorage:controller"
+    },
+    {
+      "tag": "forge:dyes/light_blue"
+    }
+  ],
+  "result": {
+    "item": "mtstorage:controller"
+  }
+}

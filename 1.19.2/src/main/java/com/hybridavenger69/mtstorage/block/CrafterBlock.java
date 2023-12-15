@@ -46,28 +46,28 @@ public class CrafterBlock extends ColoredNetworkBlock {
         }
     }
 
-    //@Override
+    @Override
     @SuppressWarnings("deprecation")
-    //public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-    //    InteractionResult result = MSBlocks.CRAFTER.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
-      //  if (result != InteractionResult.PASS) {
-        //    return result;
-       // }
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        InteractionResult result = MSBlocks.CRAFTER.changeBlockColor(state, player.getItemInHand(hand), level, pos, player);
+        if (result != InteractionResult.PASS) {
+            return result;
+        }
 
-       // if (!level.isClientSide) {
-       //     return NetworkUtils.attempt(level, pos, player, () -> NetworkHooks.openScreen(
-         //       (ServerPlayer) player,
-          //      new BlockEntityMenuProvider<CrafterBlockEntity>(
-          //          ((CrafterBlockEntity) level.getBlockEntity(pos)).getNode().getName(),
-           //         (blockEntity, windowId, inventory, p) -> new CrafterContainerMenu(blockEntity, player, windowId),
-            //        pos
-             //   ),
-             //   pos
-           // ), Permission.MODIFY, Permission.AUTOCRAFTING);
-       // }
+        if (!level.isClientSide) {
+            return NetworkUtils.attempt(level, pos, player, () -> NetworkHooks.openScreen(
+                (ServerPlayer) player,
+                new BlockEntityMenuProvider<CrafterBlockEntity>(
+                    ((CrafterBlockEntity) level.getBlockEntity(pos)).getNode().getName(),
+                    (blockEntity, windowId, inventory, p) -> new CrafterContainerMenu(blockEntity, player, windowId),
+                    pos
+                ),
+                pos
+            ), Permission.MODIFY, Permission.AUTOCRAFTING);
+        }
 
-      //  return InteractionResult.SUCCESS;
-    //}
+        return InteractionResult.SUCCESS;
+    }
 
     @Override
     public boolean hasConnectedState() {

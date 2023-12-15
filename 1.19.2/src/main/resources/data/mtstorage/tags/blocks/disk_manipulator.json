@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "mtstorage:white_disk_manipulator",
+    "mtstorage:orange_disk_manipulator",
+    "mtstorage:magenta_disk_manipulator",
+    "mtstorage:disk_manipulator",
+    "mtstorage:yellow_disk_manipulator",
+    "mtstorage:lime_disk_manipulator",
+    "mtstorage:pink_disk_manipulator",
+    "mtstorage:gray_disk_manipulator",
+    "mtstorage:light_gray_disk_manipulator",
+    "mtstorage:cyan_disk_manipulator",
+    "mtstorage:purple_disk_manipulator",
+    "mtstorage:blue_disk_manipulator",
+    "mtstorage:brown_disk_manipulator",
+    "mtstorage:green_disk_manipulator",
+    "mtstorage:red_disk_manipulator",
+    "mtstorage:black_disk_manipulator"
+  ]
+}

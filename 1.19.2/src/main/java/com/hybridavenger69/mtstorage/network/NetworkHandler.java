@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.network;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.network.craftingmonitor.CraftingMonitorCancelMessage;
 import com.hybridavenger69.mtstorage.network.craftingmonitor.CraftingMonitorUpdateMessage;
@@ -19,7 +18,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 
 public class NetworkHandler {
     private final String protocolVersion = Integer.toString(1);
-    private final ResourceLocation channel = new ResourceLocation(HybridIDS.MTStorage_MODID, "main_channel");
+    private final ResourceLocation channel = new ResourceLocation(MS.ID, "main_channel");
     private final SimpleChannel handler = NetworkRegistry.ChannelBuilder
         .named(channel)
         .clientAcceptedVersions(protocolVersion::equals)

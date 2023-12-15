@@ -9,6 +9,7 @@ import com.hybridavenger69.mtstorage.blockentity.config.*;
 import com.hybridavenger69.mtstorage.blockentity.data.BlockEntitySynchronizationParameter;
 import com.hybridavenger69.mtstorage.blockentity.data.BlockEntitySynchronizationSpec;
 import com.hybridavenger69.mtstorage.blockentity.data.RSSerializers;
+import com.hybridavenger69.mtstorage.config.ServerConfig;
 import com.hybridavenger69.mtstorage.util.LevelUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

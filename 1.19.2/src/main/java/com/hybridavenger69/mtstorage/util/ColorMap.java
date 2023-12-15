@@ -1,9 +1,7 @@
 package com.hybridavenger69.mtstorage.util;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.MSBlocks;
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.block.BaseBlock;
 import com.hybridavenger69.mtstorage.block.BlockDirection;
 import com.hybridavenger69.mtstorage.block.NetworkNodeBlock;
@@ -84,7 +82,7 @@ public class ColorMap<T> {
             map.put(color, (RegistryObject<T>) block);
             MSBlocks.COLORED_BLOCKS.add(block);
         }
-        MSBlocks.COLORED_BLOCK_TAGS.put(BlockTags.create(new ResourceLocation(HybridIDS.MTStorage_MODID, get(DEFAULT_COLOR).getId().getPath())), (ColorMap<S>) this);
+        MSBlocks.COLORED_BLOCK_TAGS.put(BlockTags.create(new ResourceLocation(MS.ID, get(DEFAULT_COLOR).getId().getPath())), (ColorMap<S>) this);
     }
 
     public <S extends BaseBlock> void registerItemsFromBlocks(ColorMap<S> blockMap) {
@@ -95,7 +93,7 @@ public class ColorMap<T> {
                 map.put(color, registerBlockItemFor(block, color, originalBlock));
             }
         }));
-        MSItems.COLORED_ITEM_TAGS.put(ItemTags.create(new ResourceLocation(HybridIDS.MTStorage_MODID, blockMap.get(DEFAULT_COLOR).getId().getPath())), (ColorMap<BlockItem>) this);
+        com.hybridavenger69.mtstorage.MSItems.COLORED_ITEM_TAGS.put(ItemTags.create(new ResourceLocation(MS.ID, blockMap.get(DEFAULT_COLOR).getId().getPath())), (ColorMap<BlockItem>) this);
     }
 
     private <S extends BaseBlock> RegistryObject<T> registerBlockItemFor(RegistryObject<S> block, DyeColor color, RegistryObject<S> translationBlock) {

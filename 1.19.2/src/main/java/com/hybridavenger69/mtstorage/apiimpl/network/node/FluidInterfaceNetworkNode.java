@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.apiimpl.network.node;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.hybridavenger69.mtstorage.MS;
 import com.hybridavenger69.mtstorage.api.network.node.INetworkNode;
 import com.hybridavenger69.mtstorage.api.util.Action;
@@ -33,7 +32,7 @@ import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import org.apache.commons.lang3.tuple.Pair;
 
 public class FluidInterfaceNetworkNode extends NetworkNode {
-    public static final ResourceLocation ID = new ResourceLocation(HybridIDS.MTStorage_MODID, "fluid_interface");
+    public static final ResourceLocation ID = new ResourceLocation(MS.ID, "fluid_interface");
 
     public static final int TANK_CAPACITY = 16_000;
 

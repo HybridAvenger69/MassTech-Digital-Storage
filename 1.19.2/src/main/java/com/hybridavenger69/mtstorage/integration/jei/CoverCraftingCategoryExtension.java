@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.integration.jei;
 
-import com.hybridavenger69.mtstorage.MSItems;
 import com.hybridavenger69.mtstorage.apiimpl.network.node.cover.CoverManager;
 import com.hybridavenger69.mtstorage.item.CoverItem;
 import com.hybridavenger69.mtstorage.recipe.CoverRecipe;
@@ -42,7 +41,7 @@ public class CoverCraftingCategoryExtension implements ICraftingCategoryExtensio
             for (ItemStack subBlock : subBlocks) {
                 if (CoverManager.isValidCover(subBlock)) {
                     input.add(subBlock);
-                    ItemStack stack = new ItemStack(MSItems.COVER.get());
+                    ItemStack stack = new ItemStack(com.hybridavenger69.mtstorage.MSItems.COVER.get());
                     CoverItem.setItem(stack, subBlock);
                     output.add(stack);
                 }

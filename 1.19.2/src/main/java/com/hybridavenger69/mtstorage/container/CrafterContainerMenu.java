@@ -22,9 +22,4 @@ public class CrafterContainerMenu extends BaseContainerMenu {
         transferManager.addBiTransfer(player.getInventory(), crafter.getNode().getUpgrades());
         transferManager.addBiTransfer(player.getInventory(), crafter.getNode().getPatternInventory());
     }
-
-    @Override
-    public void updatePatternSlotPositions(int patternScrollOffset) {
-
-    }
 }

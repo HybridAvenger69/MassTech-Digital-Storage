@@ -1,6 +1,5 @@
 package com.hybridavenger69.mtstorage.screen.widget;
 
-import com.hybridavenger69.hybridlib.HybridIDS;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.hybridavenger69.mtstorage.MS;
@@ -64,7 +63,7 @@ public class ScrollbarWidget implements GuiEventListener {
     public void render(PoseStack poseStack) {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
-        screen.bindTexture(HybridIDS.MTStorage_MODID, "icons.png");
+        screen.bindTexture(MS.ID, "icons.png");
         if (small) {
             screen.blit(poseStack, screen.getGuiLeft() + x, screen.getGuiTop() + y + (int) Math.min(height - SCROLLER_HEIGHT, (float) offset / (float) maxOffset * (float) (height - SCROLLER_HEIGHT)), isEnabled() ? 218 : 225, 0, 7, SCROLLER_HEIGHT);
         } else {
