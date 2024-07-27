@@ -1,6 +1,5 @@
-# Refined Storage [![Build Status](https://github.com/refinedmods/refinedstorage/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/refinedmods/refinedstorage/actions/workflows/build.yml) [![Downloads on CurseForge](http://cf.way2muchnoise.eu/full_940595_downloads.svg)](https://legacy.curseforge.com/minecraft/mc-mods/masstech-digital-storage) [![Discord](https://img.shields.io/discord/342942776494653441)](https://discordapp.com/invite/VYzsydb) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-
-**Refined Storage is a mass storage mod for Minecraft that offers the player a network-based storage system, allowing them to store items and fluids on a massively expandable device network.**
+# MassTech Digital Storag
+**MassTech Digital Storage is a mass storage mod for Minecraft that offers the player a network-based storage system, allowing them to store items and fluids on a massively expandable device network.**
 
 Items and fluids can be stored in one of the many storage capabilities that the mod offers. Any storage devices connected to the same network are accessible to the player through one simple Grid interface, allowing the player to access the inventories of many devices through a single unified GUI.
 
